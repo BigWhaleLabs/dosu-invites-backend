@@ -1,7 +1,7 @@
 {
-  "name": "backend-starter",
+  "name": "dosu-invites-backend",
   "version": "1.0.0",
-  "description": "Backend starter template",
+  "description": "Dosu-invites backend code",
   "main": "dist/server.js",
   "repository": "https://github.com/Borodutch/backend-starter",
   "author": "backmeupplz <backmeupplz@gmail.com>",
