@@ -20,7 +20,3 @@ const port = process.env.PORT || 1337
 app.listen(port).on('listening', () => {
   console.log(`HTTP is listening on ${port}`)
 })
-
-app.get('/video', (req, res) => {
-  res.sendFile('assets/timelapse.mp4', { root: __dirname })
-})
