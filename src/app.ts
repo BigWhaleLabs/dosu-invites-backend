@@ -3,7 +3,6 @@ import * as Koa from 'koa'
 import * as Router from 'koa-router'
 import * as bodyParser from 'koa-bodyparser'
 import * as cors from '@koa/cors'
-import * as range from '@masx200/koa-range'
 import { bootstrapControllers } from 'amala'
 
 const app = new Koa()
@@ -21,7 +20,6 @@ void (async () => {
     app.use(bodyParser())
     app.use(router.routes())
     app.use(router.allowedMethods())
-    app.use(range)
   } catch (err) {
     console.log('Koa app starting error: ', err)
   }
