@@ -32,7 +32,7 @@ export default class LoginController {
 
         ctx.res.writeHead(206, headers)
         const videoStream = fs.createReadStream(videoPath, { start, end })
-        videoStream.pipe(ctx.res)
+        return videoStream
       } else {
         throw 'Video not found'
       }
