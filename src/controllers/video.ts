@@ -14,7 +14,7 @@ export default class LoginController {
       if (fs.existsSync(videoPath)) {
         const range = ctx.req.headers.range
         if (!range) {
-          ctx.throw('Provide range headers!')
+          ctx.throw(406)
         }
         const videoSize = fs.statSync(videoPath).size
         const chunkSize = 10 ** 6
