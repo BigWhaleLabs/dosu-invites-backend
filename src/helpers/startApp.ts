@@ -4,6 +4,7 @@ import * as Router from 'koa-router'
 import * as bodyParser from 'koa-bodyparser'
 import * as cors from '@koa/cors'
 import { bootstrapControllers } from 'amala'
+import env from '@/helpers/env'
 
 export default async function startApp() {
   const app = new Koa()
@@ -19,5 +20,15 @@ export default async function startApp() {
   app.use(bodyParser())
   app.use(router.routes())
   app.use(router.allowedMethods())
-  return app
+  return new Promise<Koa>((resolve, reject) => {
+    app
+      .listen(env.PORT)
+      .on('listening', () => {
+        console.log(`HTTP is listening on ${env.PORT}`)
+        resolve(app)
+      })
+      .on('error', (error) => {
+        reject(error)
+      })
+  })
 }
