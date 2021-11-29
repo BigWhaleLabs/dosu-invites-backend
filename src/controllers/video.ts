@@ -7,7 +7,7 @@ import ffmpegPath = require('@ffmpeg-installer/ffmpeg')
 import ffmpeg = require('fluent-ffmpeg')
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
-const nftInvites = 320
+const nftInvites = 10
 const videoPath = process.env.VIDEO_PATH
 const cutVideoPath = 'src/assets/videoCut/timelapse.mp4'
 
