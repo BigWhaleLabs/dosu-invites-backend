@@ -1,22 +1,18 @@
-// Setup typegoose
-import { Severity, setGlobalOptions } from '@typegoose/typegoose'
-setGlobalOptions({
-  options: {
-    allowMixed: Severity.ALLOW,
-  },
-})
 import 'module-alias/register'
+import 'source-map-support/register'
 import * as dotenv from 'dotenv'
 dotenv.config({ path: `${__dirname}/../.env` })
-import { runMongo } from '@/models/index'
-import app from '@/app'
+import prepareVideo from '@/helpers/prepareVideo'
+import startApp from '@/helpers/startApp'
 
-// Run mongo
-void runMongo().then(() => {
-  console.log('Mongo connected')
-})
-// Start rest
-const port = process.env.PORT || 1337
-app.listen(port).on('listening', () => {
-  console.log(`HTTP is listening on ${port}`)
-})
+void (async () => {
+  console.log('Cutting the video...')
+  await prepareVideo()
+  console.log('Video was cut!')
+  console.log('Starting the app...')
+  const app = await startApp()
+  const port = process.env.PORT || 1337
+  app.listen(port).on('listening', () => {
+    console.log(`HTTP is listening on ${port}`)
+  })
+})()

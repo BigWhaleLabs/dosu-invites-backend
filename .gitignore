@@ -3,5 +3,15 @@ node_modules
 *.log
 dist
 
-src/assets/framesToEthMap.json
-src/assets/videoCut/timelapse.mp4
+# video
+video/*
+!video/.gitkeep
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
