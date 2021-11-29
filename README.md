@@ -7,8 +7,9 @@ This repository is used as the backend for dosu-invites.
 1. Clone this repo: `git clone https://github.com/BigWhaleLabs/dosu-invites-backend`
 2. Launch the [mongo database](https://www.mongodb.com/) locally
 3. Create `.env` with the environment variables listed below
-4. Run `yarn` in the root folder
-5. Run `yarn develop`
+4. Create `assets/videoCut` folder
+5. Run `yarn` in the root folder
+6. Run `yarn develop`
 
 And you should be good to go! Feel free to fork and submit pull requests.
 
