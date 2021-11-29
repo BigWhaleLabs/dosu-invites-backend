@@ -3,5 +3,5 @@ node_modules
 *.log
 dist
 
-assets/framesToEthMap.json
-assets/videoFrames
+src/assets/framesToEthMap.json
+src/assets/videoCut/timelapse.mp4
