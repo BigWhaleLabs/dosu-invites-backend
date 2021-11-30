@@ -13,7 +13,7 @@ export default async function startApp() {
     app,
     router,
     basePath: '/',
-    controllers: [__dirname + '/controllers/*'],
+    controllers: [__dirname + '/../controllers/*'],
     disableVersioning: true,
   })
   app.use(cors({ origin: '*' }))
