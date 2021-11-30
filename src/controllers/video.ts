@@ -1,25 +1,19 @@
 import * as fs from 'fs'
 import { Context } from 'koa'
-import { Controller, Ctx, Get, Params } from 'amala'
-import { IsInt, Type } from 'amala'
+import { Controller, Ctx, Get, Header } from 'amala'
 import invites from '@/helpers/invites'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
 
-class RangeParams {
-  @Type(() => Number)
-  @IsInt()
-  range!: number
-}
-
 @Controller('/video')
-export default class LoginController {
+export default class VideoController {
   @Get('/')
-  video(
-    @Ctx() ctx: Context,
-    @Params({ require: true }) { range: start }: RangeParams
-  ) {
+  video(@Ctx() ctx: Context, @Header('range') range: string) {
+    if (!range) {
+      ctx.throw(406)
+    }
     const videoSize = fs.statSync(invitesVideoPath).size
     const chunkSize = 10 ** 6
+    const start = Number(range.replace(/\D/g, ''))
     const end = Math.min(start + chunkSize, videoSize - 1)
     const contentLength = end - start + 1
     const headers = {
