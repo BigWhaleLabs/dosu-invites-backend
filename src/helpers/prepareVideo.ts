@@ -21,7 +21,10 @@ export default function prepareVideo() {
     // Do the cutting
     ffmpeg(videoPath)
       .setStartTime(0)
-      .setDuration(nftInvitesCount / 24)
+      .inputFPS(24)
+      .withVideoFilter('setpts=24.0*PTS')
+      .outputFPS(576)
+      .setDuration(nftInvitesCount)
       .output(invitesVideoPath)
       .on('error', (error) => reject(error))
       .on('end', (error) => (error ? reject(error) : resolve()))
