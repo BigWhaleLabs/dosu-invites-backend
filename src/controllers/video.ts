@@ -24,7 +24,6 @@ export default class VideoController {
     }
     ctx.res.writeHead(206, headers)
     const videoStream = fs.createReadStream(invitesVideoPath, { start, end })
-    videoStream.pipe(ctx.res)
     return videoStream
   }
 
