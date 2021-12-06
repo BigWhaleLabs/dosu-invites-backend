@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import { Context } from 'koa'
 import { Controller, Ctx, Get, Header } from 'amala'
+import getBytesFromHeader from '@/helpers/getBytesFromHeader'
 import invites from '@/helpers/invites'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
 
@@ -12,9 +13,7 @@ export default class VideoController {
       ctx.throw(406)
     }
     const videoSize = fs.statSync(invitesVideoPath).size
-    const chunkSize = 10 ** 6
-    const start = Number(range.replace(/\D/g, ''))
-    const end = Math.min(start + chunkSize, videoSize - 1)
+    const { start, end } = getBytesFromHeader(range, videoSize)
     const contentLength = end - start + 1
     const headers = {
       'Content-Range': `bytes ${start}-${end}/${videoSize}`,
