@@ -13,8 +13,7 @@ export default class VideoController {
       ctx.throw(406)
     }
     const videoSize = fs.statSync(invitesVideoPath).size
-    const { start, end } = getBytesFromHeader(range, videoSize)
-    const contentLength = end - start + 1
+    const { start, end, contentLength } = getBytesFromHeader(range, videoSize)
     const headers = {
       'Content-Range': `bytes ${start}-${end}/${videoSize}`,
       'Accept-Ranges': 'bytes',
