@@ -1,9 +1,15 @@
 import * as fs from 'fs'
+import { Body, Controller, Ctx, Get, Header, IsString, Post } from 'amala'
 import { Context } from 'koa'
-import { Controller, Ctx, Get, Header } from 'amala'
+import { WhiteListModel } from '@/models/WhiteList'
 import getBytesFromHeader from '@/helpers/getBytesFromHeader'
 import invites from '@/helpers/invites'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
+
+class InviteBody {
+  @IsString()
+  ethAddress: string
+}
 
 @Controller('/video')
 export default class VideoController {
@@ -28,5 +34,14 @@ export default class VideoController {
   @Get('/invites')
   invites() {
     return invites
+  }
+
+  @Post('/invite')
+  async invite(@Body({ required: true }) { ethAddress }: InviteBody) {
+    const invite = await WhiteListModel.findOne({ ethAddress })
+    if (!invite) {
+      return false
+    }
+    return true
   }
 }
