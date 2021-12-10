@@ -14,13 +14,16 @@ And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name    | Description                              |
-| ------- | ---------------------------------------- |
-| `PORT`  | Port to run server on (defaults to 1337) |
-| `MONGO` | URL of the mongo database                |
+| Name               | Description                                         |
+| ------------------ | --------------------------------------------------- |
+| `PORT`             | Port to run server on (defaults to 1337)            |
+| `MONGO`            | URL of the mongo database                           |
+| `PROVIDER_ADDRESS` | Endpoint of local or [remote](remote) ethereum node |
 
 Also, please, consider looking at `.env.sample`.
 
 ## CD
 
 `main` branch get deployed to [backend.invites.dosu.io](https://backend.invites.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
+
+[remote]: https://ethereumnodes.com/
