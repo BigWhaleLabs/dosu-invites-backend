@@ -3,8 +3,8 @@ import { Body, Controller, Ctx, Get, Header, IsString, Post } from 'amala'
 import { Context } from 'koa'
 import { InviteModel } from '@/models/Invite'
 import getBytesFromHeader from '@/helpers/getBytesFromHeader'
-import invites from '@/helpers/invites'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
+import nftInvites from '@/helpers/nftInvites'
 
 class InviteBody {
   @IsString()
@@ -32,8 +32,8 @@ export default class VideoController {
   }
 
   @Get('/invites')
-  invites() {
-    return invites
+  async invites() {
+    return await nftInvites()
   }
 
   @Post('/invite')
