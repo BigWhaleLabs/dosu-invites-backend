@@ -1,9 +1,8 @@
 import { InviteModel } from '@/models/Invite'
 
 export default async function nftInvites() {
-  const nftInvites = await InviteModel.where('frame')
-    .gte(0)
-    .select(['frame', 'ethAddress'])
-    .populate('_id')
+  const nftInvites = await InviteModel.find({
+    ethAddress: { $exists: true },
+  }).select(['-_id', '-inviter', '-createdAt', '-updatedAt', '-__v'])
   return nftInvites
 }

@@ -1,4 +1,0 @@
-[
-  "function mint(address _to) public",
-  "event Transfer(address indexed from, address indexed to, uint256 indexed tokenId)"
-]
