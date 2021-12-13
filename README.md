@@ -14,12 +14,10 @@ And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name               | Description                                                                                     |
-| ------------------ | ----------------------------------------------------------------------------------------------- |
-| `PORT`             | Port to run server on (defaults to 1337)                                                        |
-| `MONGO`            | URL of the mongo database                                                                       |
-| `PROVIDER_URL`     | Endpoint of local or [remote](remote) ethereum node                                             |
-| `VITE_ETH_NETWORK` | Choose which [network](network) do you want to use. Smart contract is deployed to the `rinkeby` |
+| Name    | Description                              |
+| ------- | ---------------------------------------- |
+| `PORT`  | Port to run server on (defaults to 1337) |
+| `MONGO` | URL of the mongo database                |
 
 Also, please, consider looking at `.env.sample`.
 
