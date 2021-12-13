@@ -24,6 +24,3 @@ Also, please, consider looking at `.env.sample`.
 ## CD
 
 `main` branch get deployed to [backend.invites.dosu.io](https://backend.invites.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
-
-[remote]: https://api-rinkeby.etherscan.io/
-[network]: https://docs.ethers.io/v5/api/providers/#providers-getDefaultProvider
