@@ -9,6 +9,7 @@ ffmpeg.setFfmpegPath(ffmpegPath.path)
 const videoPath = `${__dirname}/../../video/timelapse.mp4`
 
 export default async function prepareVideo() {
+  // TODO: fetch all [{address, tokenId}] using the contract code
   const invites = await MintedNFTModel.find({})
 
   return new Promise<void>((resolve, reject) => {
