@@ -3,6 +3,7 @@ import 'source-map-support/register'
 
 import prepareVideo from '@/helpers/prepareVideo'
 import runMongo from '@/models/index'
+import setupContractListeners from '@/helpers/setupContractListeners'
 import startApp from '@/helpers/startApp'
 
 void (async () => {
@@ -11,6 +12,9 @@ void (async () => {
   console.log('Cutting the video...')
   await prepareVideo()
   console.log('Video was cut!')
+  console.log('Setting up contract listeners')
+  setupContractListeners()
+  console.log('Contract listeners were set')
   console.log('Starting the app...')
   await startApp()
 })()

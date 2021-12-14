@@ -1,15 +1,15 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
+import { MintedNFTModel } from '@/models/MintedNFT'
 import { existsSync, unlinkSync } from 'fs'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
-import nftInvites from '@/helpers/nftInvites'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
 const videoPath = `${__dirname}/../../video/timelapse.mp4`
 
 export default async function prepareVideo() {
-  const invites = await nftInvites()
+  const invites = await MintedNFTModel.find({})
 
   return new Promise<void>((resolve, reject) => {
     // Check if we have input
