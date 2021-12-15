@@ -1,9 +1,9 @@
 import 'module-alias/register'
 import 'source-map-support/register'
 
+import { setupContractListeners } from '@/helpers/useContract'
 import prepareVideo from '@/helpers/prepareVideo'
 import runMongo from '@/models/index'
-import setupContractListeners from '@/helpers/setupContractListeners'
 import startApp from '@/helpers/startApp'
 
 void (async () => {

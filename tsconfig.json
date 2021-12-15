@@ -10,7 +10,6 @@
     "paths": {
       "@/*": ["*"]
     },
-    "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },

@@ -10,6 +10,8 @@ export default cleanEnv(process.env, {
   PORT: num({ default: 1337 }),
   MONGO: str(),
   ETH_NETWORK: str(),
-  INFURA_API_KEY: str(),
   CONTRACT_ADDRESS: str(),
+  PRIVATE_KEY: str(),
+  INFURA_PROJECT_ID: str(),
+  INFURA_PROJECT_SECRET: str(),
 })

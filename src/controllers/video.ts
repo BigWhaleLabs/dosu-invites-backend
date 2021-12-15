@@ -2,9 +2,9 @@ import * as fs from 'fs'
 import { Body, Controller, Ctx, Get, Header, IsString, Post } from 'amala'
 import { Context } from 'koa'
 import { InviteModel } from '@/models/Invite'
+import { getTokenToAddressMap } from '@/helpers/useContract'
 import getBytesFromHeader from '@/helpers/getBytesFromHeader'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
-import nftInvites from '@/helpers/nftInvites'
 
 class InviteBody {
   @IsString()
@@ -33,7 +33,7 @@ export default class VideoController {
 
   @Get('/invites')
   async invites() {
-    return await nftInvites()
+    return await getTokenToAddressMap()
   }
 
   @Post('/invite')

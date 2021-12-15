@@ -8,19 +8,27 @@ This repository is used as the backend for dosu-invites.
 2. Create `.env` with the environment variables listed below
 3. Run `yarn` in the root folder
 4. Create a `video/timelapse.mp4` file with the video you want to use for the invites
-5. Run `yarn develop`
+5. Setup the (infura project)[infuraproject]
+6. Run `yarn develop`
 
 And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name    | Description                              |
-| ------- | ---------------------------------------- |
-| `PORT`  | Port to run server on (defaults to 1337) |
-| `MONGO` | URL of the mongo database                |
+| Name                | Description                                     |
+| ------------------- | ----------------------------------------------- |
+| `PORT`              | Port to run server on (defaults to 1337)        |
+| `MONGO`             | URL of the mongo database                       |
+| `ETH_NETWORK`       | Choose [test](test) or mainnet network          |
+| `INFURA_PROJECT_ID` | Id or your project from (Infura)[infuraproject] |
+| `CONTRACT_ADDRESS`  | Contract adderss: 0x...                         |
+| `PRIVATE_KEY`       | Contract private key to mint NFTs: 0x...        |
 
 Also, please, consider looking at `.env.sample`.
 
 ## CD
 
 `main` branch get deployed to [backend.invites.dosu.io](https://backend.invites.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
+
+[test]: (https://docs.ethers.io/v5/api/providers/api-providers/#InfuraProvider)
+[infuraproject]: (https://infura.io/dashboard/)
