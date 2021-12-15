@@ -6,9 +6,9 @@ class InviteBody {
   ethAddress: string
 }
 
-@Controller('/video')
+@Controller('/invites')
 export default class InvitesController {
-  @Get('/invites')
+  @Get('/')
   async invites() {
     return await getTokenToAddressMap()
   }
