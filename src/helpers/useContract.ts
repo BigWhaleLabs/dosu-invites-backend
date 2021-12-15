@@ -39,3 +39,7 @@ export async function getTokenToAddressMap() {
   }
   return tokenToAddressMap
 }
+
+export async function checkInWhiteList(ethAddress: string) {
+  return await contract.whitelist(ethAddress)
+}

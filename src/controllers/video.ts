@@ -1,8 +1,7 @@
 import * as fs from 'fs'
 import { Body, Controller, Ctx, Get, Header, IsString, Post } from 'amala'
 import { Context } from 'koa'
-import { InviteModel } from '@/models/Invite'
-import { getTokenToAddressMap } from '@/helpers/useContract'
+import { checkInWhiteList, getTokenToAddressMap } from '@/helpers/useContract'
 import getBytesFromHeader from '@/helpers/getBytesFromHeader'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
 
@@ -38,10 +37,6 @@ export default class VideoController {
 
   @Post('/invite')
   async invite(@Body({ required: true }) { ethAddress }: InviteBody) {
-    const invite = await InviteModel.findOne({ ethAddress })
-    if (!invite) {
-      return false
-    }
-    return true
+    return await checkInWhiteList(ethAddress)
   }
 }
