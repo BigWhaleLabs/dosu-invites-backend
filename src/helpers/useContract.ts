@@ -9,12 +9,10 @@ const provider = new ethers.providers.InfuraProvider(env.ETH_NETWORK, {
   projectId: env.INFURA_PROJECT_ID,
   projectSecret: env.INFURA_PROJECT_SECRET,
 })
-const wallet = new ethers.Wallet(env.PRIVATE_KEY, provider)
-
 export const contract = new ethers.Contract(
   env.CONTRACT_ADDRESS,
   contractAbi,
-  wallet
+  provider
 )
 
 export function setupContractListeners() {

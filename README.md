@@ -22,7 +22,6 @@ And you should be good to go! Feel free to fork and submit pull requests.
 | `ETH_NETWORK`       | Choose [test](test) or mainnet network          |
 | `INFURA_PROJECT_ID` | Id or your project from (Infura)[infuraproject] |
 | `CONTRACT_ADDRESS`  | Contract adderss: 0x...                         |
-| `PRIVATE_KEY`       | Contract private key to mint NFTs: 0x...        |
 
 Also, please, consider looking at `.env.sample`.
 

@@ -11,7 +11,6 @@ export default cleanEnv(process.env, {
   MONGO: str(),
   ETH_NETWORK: str(),
   CONTRACT_ADDRESS: str(),
-  PRIVATE_KEY: str(),
   INFURA_PROJECT_ID: str(),
   INFURA_PROJECT_SECRET: str(),
 })
