@@ -8,7 +8,7 @@ import invitesVideoPath from '@/helpers/invitesVideoPath'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
-const videoPath = resolve(`${cwd()}\\video\\`, 'timelapse.mp4')
+const videoPath = resolve(cwd(), 'video/timelapse.mp4')
 
 export default async function prepareVideo(videoLength?: number) {
   try {
