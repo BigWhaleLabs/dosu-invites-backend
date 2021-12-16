@@ -1,5 +1,4 @@
-import { EventFilter, ethers } from 'ethers'
-import BigNumberToNumber from '@/helpers/BigNumberToNumber'
+import { BigNumber, EventFilter, ethers } from 'ethers'
 import env from '@/helpers/env'
 import getContractABI from '@/helpers/getContractABI'
 import prepareVideo from '@/helpers/prepareVideo'
@@ -21,19 +20,16 @@ export function setupContractListeners() {
     topics: [ethers.utils.id('Mint(address,uint256)')],
   }
 
-  contract.on(
-    filter,
-    (_to: string, tokenId: { _hex: string; _isBigNumber: boolean }) => {
-      void prepareVideo(BigNumberToNumber(tokenId))
-    }
-  )
+  contract.on(filter, (_to: string, tokenId: BigNumber) => {
+    void prepareVideo(tokenId.toNumber())
+  })
 }
 
 export async function getTokenToAddressMap() {
   const invites = await contract.getMintedInvites()
   const tokenToAddressMap: { [tokenId: number]: string } = {}
   for (const data of invites) {
-    tokenToAddressMap[BigNumberToNumber(data.tokenId) - 1] = data.ethAddress
+    tokenToAddressMap[data.tokenId.toNumber() - 1] = data.ethAddress
   }
   return tokenToAddressMap
 }
