@@ -21,7 +21,7 @@ export function setupContractListeners() {
   }
 
   contract.on(filter, (_to: string, tokenId: BigNumber) => {
-    void prepareVideo(tokenId.toNumber())
+    void prepareVideo(+tokenId)
   })
 }
 
@@ -29,7 +29,7 @@ export async function getTokenToAddressMap() {
   const invites = await contract.getMintedInvites()
   const tokenToAddressMap: { [tokenId: number]: string } = {}
   for (const data of invites) {
-    tokenToAddressMap[data.tokenId.toNumber() - 1] = data.ethAddress
+    tokenToAddressMap[+data.tokenId - 1] = data.ethAddress
   }
   return tokenToAddressMap
 }
