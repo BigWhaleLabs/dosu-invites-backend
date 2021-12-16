@@ -1,7 +1,7 @@
 import 'module-alias/register'
 import 'source-map-support/register'
 
-import { setupContractListeners } from '@/helpers/useContract'
+import { setupContractListeners } from '@/helpers/contract'
 import prepareVideo from '@/helpers/prepareVideo'
 import runMongo from '@/models/index'
 import startApp from '@/helpers/startApp'

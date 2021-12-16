@@ -1,7 +1,7 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import { existsSync, unlinkSync } from 'fs'
-import { getTokenToAddressMap } from '@/helpers/useContract'
+import { getTokenToAddressMap } from '@/helpers/contract'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
