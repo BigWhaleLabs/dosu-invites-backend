@@ -15,13 +15,13 @@ And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name                | Description                                     |
-| ------------------- | ----------------------------------------------- |
-| `PORT`              | Port to run server on (defaults to 1337)        |
-| `MONGO`             | URL of the mongo database                       |
-| `ETH_NETWORK`       | Choose [test](test) or mainnet network          |
-| `INFURA_PROJECT_ID` | Id or your project from (Infura)[infuraproject] |
-| `CONTRACT_ADDRESS`  | Contract adderss: 0x...                         |
+| Name                | Description                                       |
+| ------------------- | ------------------------------------------------- |
+| `PORT`              | Port to run server on (defaults to 1337)          |
+| `MONGO`             | URL of the mongo database                         |
+| `ETH_NETWORK`       | Choose [test](infuraProviders) or mainnet network |
+| `INFURA_PROJECT_ID` | Id or your project from (Infura)[infuraProject]   |
+| `CONTRACT_ADDRESS`  | Contract adderss: 0x...                           |
 
 Also, please, consider looking at `.env.sample`.
 
@@ -29,5 +29,5 @@ Also, please, consider looking at `.env.sample`.
 
 `main` branch get deployed to [backend.invites.dosu.io](https://backend.invites.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
 
-[test]: (https://docs.ethers.io/v5/api/providers/api-providers/#InfuraProvider)
+[infuraproviders]: (https://docs.ethers.io/v5/api/providers/api-providers/#InfuraProvider)
 [infuraproject]: (https://infura.io/dashboard/)
