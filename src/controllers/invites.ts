@@ -9,12 +9,12 @@ class InviteBody {
 @Controller('/invites')
 export default class InvitesController {
   @Get('/')
-  async invites() {
-    return await getTokenToAddressMap()
+  invites() {
+    return getTokenToAddressMap()
   }
 
   @Post('/invite')
-  async invite(@Body({ required: true }) { ethAddress }: InviteBody) {
-    return await checkInWhiteList(ethAddress)
+  invite(@Body({ required: true }) { ethAddress }: InviteBody) {
+    return checkInWhiteList(ethAddress)
   }
 }
