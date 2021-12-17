@@ -1,15 +1,8 @@
 import * as fs from 'fs'
-import { Body, Controller, Ctx, Get, Header, IsString, Post } from 'amala'
 import { Context } from 'koa'
-import { InviteModel } from '@/models/Invite'
+import { Controller, Ctx, Get, Header } from 'amala'
 import getBytesFromHeader from '@/helpers/getBytesFromHeader'
-import invites from '@/helpers/invites'
 import invitesVideoPath from '@/helpers/invitesVideoPath'
-
-class InviteBody {
-  @IsString()
-  ethAddress: string
-}
 
 @Controller('/video')
 export default class VideoController {
@@ -29,19 +22,5 @@ export default class VideoController {
     ctx.res.writeHead(206, headers)
     const videoStream = fs.createReadStream(invitesVideoPath, { start, end })
     return videoStream
-  }
-
-  @Get('/invites')
-  invites() {
-    return invites
-  }
-
-  @Post('/invite')
-  async invite(@Body({ required: true }) { ethAddress }: InviteBody) {
-    const invite = await InviteModel.findOne({ ethAddress })
-    if (!invite) {
-      return false
-    }
-    return true
   }
 }
