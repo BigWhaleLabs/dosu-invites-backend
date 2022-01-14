@@ -7,14 +7,16 @@ export default async function saveVideoToIPFS() {
     if (!existsSync(cutVideoPath)) {
       return new Error('Cut Video not found')
     }
-    const video = createReadStream(cutVideoPath)
     const ipfsNode = await startIpfs()
     const { cid } = await ipfsNode.add({
-      content: video,
-      path: cutVideoPath,
-      type: 'video',
+      path: 'invites.mp4',
+      content: createReadStream(cutVideoPath),
+      type: 'file',
+      mtime: new Date(),
     })
-    console.log('Video path: ' + cid)
+    console.log(
+      `Link to video: https://ipfs.io/ipfs/${cid}?filename=invites.mp4`
+    )
   } catch (error) {
     console.error(error)
   }
