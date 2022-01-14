@@ -1,7 +1,7 @@
 import { Context } from 'koa'
 import { Controller, Ctx, Get, Header } from 'amala'
 import { createReadStream, statSync } from 'fs'
-import { cutVideoPath } from '@/helpers/localPath'
+import cutVideoPath from '@/helpers/cutVideoPath'
 import getBytesFromHeader from '@/helpers/getBytesFromHeader'
 
 @Controller('/video')

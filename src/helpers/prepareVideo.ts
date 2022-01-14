@@ -1,10 +1,10 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
-import { cutVideoPath } from '@/helpers/localPath'
 import { cwd } from 'process'
 import { existsSync, unlinkSync } from 'fs'
 import { getTokenToAddressMap } from '@/helpers/contract'
 import { resolve } from 'path'
+import cutVideoPath from '@/helpers/cutVideoPath'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 

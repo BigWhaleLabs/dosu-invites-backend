@@ -1,15 +1,20 @@
-import { create } from 'ipfs-core'
-import { existsSync, rmSync } from 'fs'
-import { ipfsRepoPath } from '@/helpers/localPath'
+import { create } from 'ipfs-http-client'
+import env from '@/helpers/env'
 
 export default async function startIpfs() {
-  if (existsSync(ipfsRepoPath)) {
-    rmSync(ipfsRepoPath, { recursive: true })
-  }
+  const projectId = env.INFURA_IPFS_ID
+  const projectSecret = env.INFURA_IPFS_SECRET
+  const authorization =
+    'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
 
-  const ipfsNode = await create({
-    repo: ipfsRepoPath,
+  const ipfsClient = await create({
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    headers: {
+      authorization,
+    },
   })
 
-  return ipfsNode
+  return ipfsClient
 }
