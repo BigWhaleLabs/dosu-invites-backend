@@ -7,7 +7,7 @@ export default async function saveVideoToIPFS() {
     if (!existsSync(cutVideoPath)) {
       return new Error('Cut Video not found')
     }
-    const ipfsClient = await startIpfs()
+    const ipfsClient = startIpfs()
     const { cid } = await ipfsClient.add(
       {
         path: 'invites.mp4',
