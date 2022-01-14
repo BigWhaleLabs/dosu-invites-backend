@@ -4,7 +4,7 @@ import 'source-map-support/register'
 import { setupContractListeners } from '@/helpers/contract'
 import prepareVideo from '@/helpers/prepareVideo'
 import runMongo from '@/models/index'
-import saveVideoToIPFS from '@/helpers/saveVideoToIPFS'
+import saveVideoToIpfs from '@/helpers/saveVideoToIpfs'
 import startApp from '@/helpers/startApp'
 
 void (async () => {
@@ -14,7 +14,7 @@ void (async () => {
   await prepareVideo()
   console.log('Video was cut!')
   console.log('Saving to IPFS...')
-  await saveVideoToIPFS()
+  await saveVideoToIpfs()
   console.log('Video saved into IPFS')
   console.log('Setting up contract listeners...')
   setupContractListeners()

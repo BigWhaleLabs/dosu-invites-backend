@@ -2,7 +2,7 @@ import { createReadStream, existsSync } from 'fs'
 import cutVideoPath from '@/helpers/cutVideoPath'
 import startIpfs from '@/helpers/startIpfs'
 
-export default async function saveVideoToIPFS() {
+export default async function saveVideoToIpfs() {
   try {
     if (!existsSync(cutVideoPath)) {
       return new Error('Cut Video not found')
