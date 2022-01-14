@@ -1,6 +1,6 @@
 import { createReadStream, existsSync } from 'fs'
 import cutVideoPath from '@/helpers/cutVideoPath'
-import startIpfs from '@/helpers/startIPFS'
+import startIpfs from '@/helpers/startIpfs'
 
 export default async function saveVideoToIPFS() {
   try {
