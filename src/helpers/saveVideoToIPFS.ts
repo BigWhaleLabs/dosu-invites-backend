@@ -9,15 +9,12 @@ export default async function saveVideoToIPFS() {
     }
     const video = createReadStream(cutVideoPath)
     const ipfsNode = await startIpfs()
-    await ipfsNode.add({
+    const { cid } = await ipfsNode.add({
       content: video,
       path: cutVideoPath,
       type: 'video',
     })
-    const result = await ipfsNode.cat(
-      'https://ipfs.io/ipfs/QmZKJhzdCdKFAnLVvKuHdZx5KFSJm4uJF9dm33esLT2wam'
-    )
-    console.log(result)
+    console.log('Video path: ' + cid)
   } catch (error) {
     console.error(error)
   }
