@@ -6,6 +6,7 @@ dist
 # video
 video/*
 !video/.gitkeep
+!video/cutVideoFrames/.gitkeep
 
 # yarn
 .pnp.*

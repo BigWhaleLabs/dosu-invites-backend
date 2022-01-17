@@ -2,7 +2,7 @@ import { BigNumber, EventFilter, ethers } from 'ethers'
 import env from '@/helpers/env'
 import getContractABI from '@/helpers/getContractABI'
 import prepareVideo from '@/helpers/prepareVideo'
-import saveVideoToIpfs from '@/helpers/saveVideoToIpfs'
+import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
 
 const contractAbi = getContractABI()
 const provider = new ethers.providers.InfuraProvider(env.ETH_NETWORK, {
@@ -24,7 +24,7 @@ export function setupContractListeners() {
   contract.on(filter, async (_to: string, tokenId: BigNumber) => {
     console.log('Updating the video...')
     await prepareVideo(+tokenId)
-    await saveVideoToIpfs()
+    await saveFramesToIpfs()
     console.log('The video was updated!')
   })
 }

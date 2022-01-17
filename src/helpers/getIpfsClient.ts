@@ -1,7 +1,7 @@
 import { create } from 'ipfs-http-client'
 import env from '@/helpers/env'
 
-export default function startIpfs() {
+export default function getIpfsClient() {
   const projectId = env.INFURA_IPFS_ID
   const projectSecret = env.INFURA_IPFS_SECRET
   const authorization =
