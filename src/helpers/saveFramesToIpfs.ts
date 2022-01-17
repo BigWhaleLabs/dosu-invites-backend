@@ -22,7 +22,7 @@ export default async function saveFramesToIpfs() {
       await extractFrame({
         input: cutVideoPath,
         fps: 1,
-        output: `${cutVideoFramesPath}/${id} - ${addresses[id]}.png`,
+        output: `${cutVideoFramesPath}/${id}-${addresses[id]}.png`,
         quality: 1, // From 1-31 with 31 being the worst quality
         offset: +id * 1000,
       })
