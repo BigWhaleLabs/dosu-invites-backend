@@ -4,9 +4,11 @@ node_modules
 dist
 
 # video
-video/*
 !video/.gitkeep
+video/cutVideoFrames/*
 !video/cutVideoFrames/.gitkeep
+video/invites.mp4
+video/timelapse.mp4
 
 # yarn
 .pnp.*
