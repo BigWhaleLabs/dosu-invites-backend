@@ -749,6 +749,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cache-manager@npm:^3.4.2":
+  version: 3.4.2
+  resolution: "@types/cache-manager@npm:3.4.2"
+  checksum: 121cad75d66da5e65aa9096dfe706d2ec696b20b6bd558128606063488dcedebdafaafc16b27ff620e1fd9c860ca64e088866f01e05cbaf0708a4d43b341c9d5
+  languageName: node
+  linkType: hard
+
 "@types/connect@npm:*":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
@@ -1256,6 +1263,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"async@npm:3.2.0":
+  version: 3.2.0
+  resolution: "async@npm:3.2.0"
+  checksum: 6739fae769e6c9f76b272558f118ef041d45c979c573a8fe93f8cfbc32eb9c92da032e9effe6bbcc9b1131292cde6c4a9e61a442894aa06a262addd8dd3adda1
+  languageName: node
+  linkType: hard
+
 "async@npm:>=0.2.9":
   version: 3.2.2
   resolution: "async@npm:3.2.2"
@@ -1383,6 +1397,17 @@ __metadata:
     mime-types: ^2.1.18
     ylru: ^1.2.0
   checksum: 18db4d59452669ccbfd7146a1510a37eb28e9eccf18ca7a4eb603dff2edc5cccdca7498fc3042a2978f76f11151fba486eb9eb69d9afa3fb124957870aef4fd3
+  languageName: node
+  linkType: hard
+
+"cache-manager@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "cache-manager@npm:3.6.0"
+  dependencies:
+    async: 3.2.0
+    lodash: ^4.17.21
+    lru-cache: 6.0.0
+  checksum: c768d2b2927fb245b44a1dbf90d0815ad5318bfa1e4fc733e84a1538189227a4218dade7bfcad0a800e0b0c29e0338d79901cbe506e2e59f729155d73b7a3c51
   languageName: node
   linkType: hard
 
@@ -1712,6 +1737,7 @@ __metadata:
     "@hapi/boom": ^9.1.4
     "@koa/cors": ^3.1.0
     "@typegoose/typegoose": ^9.4.0
+    "@types/cache-manager": ^3.4.2
     "@types/fluent-ffmpeg": ^2.1.20
     "@types/koa": ^2.13.4
     "@types/koa-bodyparser": ^4.3.5
@@ -1720,6 +1746,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.9.1
     "@typescript-eslint/parser": ^5.9.1
     amala: ^7.0.0
+    cache-manager: ^3.6.0
     dotenv: ^10.0.0
     envalid: ^7.2.2
     eslint: ^8.6.0
@@ -1730,6 +1757,7 @@ __metadata:
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-sort-imports-es6-autofix: ^0.6.0
     ethers: ^5.5.3
+    ffmpeg-extract-frame: ^1.0.2
     ffmpeg-extract-frames: ^2.0.2
     fluent-ffmpeg: ^2.1.2
     ipfs-http-client: ^55.0.0
@@ -2292,6 +2320,15 @@ __metadata:
   dependencies:
     reusify: ^1.0.4
   checksum: 32cf15c29afe622af187d12fc9cd93e160a0cb7c31a3bb6ace86b7dea3b28e7b72acde89c882663f307b2184e14782c6c664fa315973c03626c7d4bff070bb0b
+  languageName: node
+  linkType: hard
+
+"ffmpeg-extract-frame@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "ffmpeg-extract-frame@npm:1.0.2"
+  dependencies:
+    fluent-ffmpeg: ^2.1.2
+  checksum: 7a78cfb8ef09f66b8d3d848238ee9d50ab55ab16e74bea50ba569e0a78014a1adaa123a0696ebe364a843e05930723d224d4d65344bc47072b20cd048c60bb43
   languageName: node
   linkType: hard
 
@@ -3308,7 +3345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.20":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.20, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -3329,7 +3366,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^6.0.0":
+"lru-cache@npm:6.0.0, lru-cache@npm:^6.0.0":
   version: 6.0.0
   resolution: "lru-cache@npm:6.0.0"
   dependencies:

@@ -1,8 +1,13 @@
 import { BigNumber, EventFilter, ethers } from 'ethers'
+import { caching } from 'cache-manager'
 import env from '@/helpers/env'
 import getContractABI from '@/helpers/getContractABI'
 import prepareVideo from '@/helpers/prepareVideo'
 import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
+
+type TokenToAddressMap = { [tokenId: number]: string }
+
+const cache = caching({ store: 'memory', max: 100, ttl: 10 })
 
 const contractAbi = getContractABI()
 const provider = new ethers.providers.InfuraProvider(env.ETH_NETWORK, {
@@ -29,11 +34,18 @@ export function setupContractListeners() {
   })
 }
 
-export async function getTokenToAddressMap() {
-  const invites = await contract.getMintedInvites()
-  const tokenToAddressMap: { [tokenId: number]: string } = {}
-  for (const data of invites) {
-    tokenToAddressMap[+data.tokenId - 1] = data.ethAddress
+export async function getTokenToAddressMap(update?: boolean) {
+  const tokenToAddressMap = await cache.get<TokenToAddressMap | null>(
+    'TokenToAddressMap'
+  )
+  if (!tokenToAddressMap || update) {
+    const invites = await contract.getMintedInvites()
+    const tokenToAddressMap: TokenToAddressMap = {}
+    for (const data of invites) {
+      tokenToAddressMap[+data.tokenId - 1] = data.ethAddress
+    }
+    cache.set('TokenToAddressMap', tokenToAddressMap)
+    return tokenToAddressMap
   }
   return tokenToAddressMap
 }

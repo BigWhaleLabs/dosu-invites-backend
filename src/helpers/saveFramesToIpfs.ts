@@ -2,8 +2,9 @@ import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import { cutVideoFramesPath, cutVideoPath } from '@/helpers/localPath'
 import { existsSync, readFileSync } from 'fs'
+import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
-import extractFrames = require('ffmpeg-extract-frames')
+import extractFrame = require('ffmpeg-extract-frame')
 import { readdirSync } from 'fs'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
@@ -14,17 +15,23 @@ export default async function saveFramesToIpfs() {
       return new Error('Cut Video not found')
     }
 
+    const addresses = await getTokenToAddressMap()
+
     // Get video frames
-    await extractFrames({
-      fps: 1,
-      input: cutVideoPath,
-      output: `${cutVideoFramesPath}/%d.png`,
+    Object.keys(addresses).forEach(async (id: string) => {
+      await extractFrame({
+        input: cutVideoPath,
+        fps: 1,
+        output: `${cutVideoFramesPath}/${id} - ${addresses[id]}.png`,
+        quality: 1, // From 1-31 with 31 being the worst quality
+        offset: +id * 1000,
+      })
     })
 
     const ipfsClient = getIpfsClient()
 
     readdirSync(cutVideoFramesPath).forEach(async (file) => {
-      const { cid } = await ipfsClient.add(
+      await ipfsClient.add(
         {
           path: file,
           content: readFileSync(`${cutVideoFramesPath}/${file}`),
@@ -32,9 +39,6 @@ export default async function saveFramesToIpfs() {
           mtime: new Date(),
         },
         { pin: true }
-      )
-      console.log(
-        `Link to the frame: https://ipfs.io/ipfs/${cid}?filename=${file}`
       )
     })
   } catch (error) {
