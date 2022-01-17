@@ -45,7 +45,7 @@ export async function getTokenToAddressMap(update?: boolean) {
     for (const data of invites) {
       tokenToAddressMap[+data.tokenId - 1] = data.ethAddress
     }
-    cache.set('TokenToAddressMap', tokenToAddressMap)
+    await cache.set('TokenToAddressMap', tokenToAddressMap)
     return tokenToAddressMap
   }
   return tokenToAddressMap
