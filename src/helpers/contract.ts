@@ -28,6 +28,7 @@ export function setupContractListeners() {
 
   contract.on(filter, async (_to: string, tokenId: BigNumber) => {
     console.log('Updating the video...')
+    await getTokenToAddressMap(true) // Update cached list of invites
     await prepareVideo(+tokenId)
     await saveFramesToIpfs()
     console.log('The video was updated!')
