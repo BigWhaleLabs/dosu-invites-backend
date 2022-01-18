@@ -31,7 +31,7 @@ export default async function saveFramesToIpfs() {
     const ipfsClient = getIpfsClient()
 
     readdirSync(cutVideoFramesPath).forEach(async (file) => {
-      await ipfsClient.add(
+      const { cid } = await ipfsClient.add(
         {
           path: file,
           content: readFileSync(`${cutVideoFramesPath}/${file}`),
@@ -39,6 +39,9 @@ export default async function saveFramesToIpfs() {
           mtime: new Date(),
         },
         { pin: true }
+      )
+      console.log(
+        `Link to the frame: https://ipfs.io/ipfs/${cid}?filename=${file}`
       )
     })
   } catch (error) {
