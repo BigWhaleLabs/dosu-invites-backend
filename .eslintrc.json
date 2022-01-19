@@ -49,5 +49,5 @@
     ],
     "import/prefer-default-export": "error"
   },
-  "ignorePatterns": ["src/types/abiTypes", "src/types/abi.json"]
+  "ignorePatterns": ["src/types"]
 }

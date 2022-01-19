@@ -14,5 +14,7 @@ jobs:
         run: yarn
       - name: Compile code
         run: yarn tsc --skipLibCheck
+      - name: Try to fix the code
+        run: yarn fix
       - name: Lint code
         run: yarn lint
