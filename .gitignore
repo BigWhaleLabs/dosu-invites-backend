@@ -4,7 +4,6 @@ node_modules
 dist
 
 # Abi types
-src/types/abi.json
 src/types/abiTypes/*
 
 # video
