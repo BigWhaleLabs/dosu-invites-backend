@@ -11,7 +11,6 @@
     "distribute": "node dist/server.js",
     "develop": "tsc-watch --skipLibCheck --onSuccess 'node dist/server.js'",
     "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
-    "install": "yarn generate-abi-types",
     "build-ts": "tsc --skipLibCheck",
     "test": "yarn jest --forceExit",
     "pretty": "prettier --check src",
