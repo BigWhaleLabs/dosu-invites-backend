@@ -3,6 +3,9 @@ node_modules
 *.log
 dist
 
+# Generated contract ABI
+src/types/abiTypes
+
 # video
 video/*
 !video/.gitkeep

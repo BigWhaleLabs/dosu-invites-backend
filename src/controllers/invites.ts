@@ -1,5 +1,8 @@
 import { Body, Controller, Get, IsString, Post } from 'amala'
-import { checkInWhiteList, getTokenToAddressMap } from '@/helpers/contract'
+import {
+  checkInWhiteList,
+  getTokenToAddressMap,
+} from '@/helpers/contract/contract'
 
 class InviteBody {
   @IsString()

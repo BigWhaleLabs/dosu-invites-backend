@@ -1,7 +1,9 @@
 import { BigNumber, EventFilter, ethers } from 'ethers'
 import { caching } from 'cache-manager'
+
+import { Abi__factory } from '@/types/abiTypes/factories/Abi__factory'
+import { MintEvent } from '@/types/abiTypes/Abi'
 import env from '@/helpers/env'
-import getContractABI from '@/helpers/getContractABI'
 import prepareVideo from '@/helpers/prepareVideo'
 import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
 
@@ -9,16 +11,11 @@ type TokenToAddressMap = { [tokenId: number]: string }
 
 const cache = caching({ store: 'memory', max: 100, ttl: 10 })
 
-const contractAbi = getContractABI()
 const provider = new ethers.providers.InfuraProvider(env.ETH_NETWORK, {
   projectId: env.INFURA_PROJECT_ID,
   projectSecret: env.INFURA_PROJECT_SECRET,
 })
-export const contract = new ethers.Contract(
-  env.CONTRACT_ADDRESS,
-  contractAbi,
-  provider
-)
+export const contract = Abi__factory.connect(env.CONTRACT_ADDRESS, provider)
 
 export function setupContractListeners() {
   const filter: EventFilter = {
@@ -26,7 +23,7 @@ export function setupContractListeners() {
     topics: [ethers.utils.id('Mint(address,uint256)')],
   }
 
-  contract.on(filter, async (_to: string, tokenId: BigNumber) => {
+  contract.on<MintEvent>(filter, async (_to: string, tokenId: BigNumber) => {
     console.log('Updating the video...')
     await getTokenToAddressMap(true) // Update cached list of invites
     await prepareVideo(+tokenId)
