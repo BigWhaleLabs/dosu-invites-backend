@@ -10,7 +10,7 @@
   "scripts": {
     "distribute": "node dist/server.js",
     "develop": "tsc-watch --skipLibCheck --onSuccess 'node dist/server.js'",
-    "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
+    "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes' && prettier --write src/types/abiTypes",
     "postinstall": "yarn generate-abi-types",
     "build-ts": "tsc --skipLibCheck",
     "test": "yarn jest --forceExit",
@@ -49,6 +49,8 @@
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-json-format": "^2.0.1",
     "eslint-plugin-no-relative-import-paths": "^1.1.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",

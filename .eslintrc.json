@@ -48,5 +48,6 @@
       }
     ],
     "import/prefer-default-export": "error"
-  }
+  },
+  "ignorePatterns": ["src/types/abiTypes", "src/types/abi.json"]
 }
