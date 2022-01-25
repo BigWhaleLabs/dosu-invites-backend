@@ -10,6 +10,7 @@
   "scripts": {
     "distribute": "node dist/server.js",
     "develop": "yarn generate-abi-types && tsc-watch --skipLibCheck --onSuccess 'node dist/server.js'",
+    "start-ipfs": "ipfs daemon",
     "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
     "build-ts": "tsc --skipLibCheck",
     "test": "yarn jest --forceExit",
@@ -28,11 +29,12 @@
     "ffmpeg-extract-frame": "^1.0.2",
     "ffmpeg-extract-frames": "^2.0.2",
     "fluent-ffmpeg": "^2.1.2",
+    "ipfs": "^0.61.0",
     "ipfs-http-client": "^55.0.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.1.1",
-    "mongoose": "^6.1.7"
+    "mongoose": "^6.1.8"
   },
   "devDependencies": {
     "@typechain/ethers-v5": "^9.0.0",
@@ -42,9 +44,9 @@
     "@types/koa-bodyparser": "^4.3.5",
     "@types/koa-router": "^7.4.4",
     "@types/koa__cors": "^3.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
-    "dotenv": "^14.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "dotenv": "^14.3.0",
     "envalid": "^7.2.2",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
@@ -60,7 +62,7 @@
     "source-map-support": "^0.5.21",
     "tsc-watch": "^4.6.0",
     "typechain": "^7.0.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "_moduleAliases": {
     "@": "dist"

@@ -15,6 +15,7 @@ const provider = new ethers.providers.InfuraProvider(env.ETH_NETWORK, {
   projectId: env.INFURA_PROJECT_ID,
   projectSecret: env.INFURA_PROJECT_SECRET,
 })
+
 export const contract = Abi__factory.connect(env.CONTRACT_ADDRESS, provider)
 
 export function setupContractListeners() {
@@ -39,9 +40,9 @@ export async function getTokenToAddressMap(update?: boolean) {
   if (!tokenToAddressMap || update) {
     const invites = await contract.getMintedInvites()
     const tokenToAddressMap: TokenToAddressMap = {}
-    for (const data of invites) {
-      tokenToAddressMap[+data.tokenId - 1] = data.ethAddress
-    }
+    Object.keys(invites).forEach((tokenId) => {
+      tokenToAddressMap[+tokenId - 1] = invites[tokenId].ethAddress
+    })
     await cache.set('TokenToAddressMap', tokenToAddressMap)
     return tokenToAddressMap
   }
