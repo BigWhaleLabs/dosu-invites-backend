@@ -45,7 +45,7 @@ export default async function saveFramesToIpfs() {
       await ipfsClient.name.publish(`/ipfs/${cid}`).then((res) => {
         console.log(`https://gateway.ipfs.io/ipns/${res.name}`)
       })
-      contract.setTokenURI(file[0], cid.toString())
+      // contract.setTokenURI(file[0], cid.toString())
       // Link to the frame: https://ipfs.io/ipfs/${cid}?filename=${file}
     })
   } catch (error) {
