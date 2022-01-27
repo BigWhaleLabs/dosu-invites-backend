@@ -9,7 +9,7 @@ This repository is used as the backend for dosu-invites.
 3. Run `yarn` in the root folder
 4. Create a `video/timelapse.mp4` file with the video you want to use for the invites
 5. Setup the [infura ETH project][infuraproject] and use project id and secret keys in `.env`
-6. Run `yarn start-ipfs`, keep it alive
+6. Run `yarn start-ipfs`, keep it alive OR run official [IPFS app](https://docs.ipfs.io/install/ipfs-desktop/), but not both
 7. Run `yarn develop` in another terminal window
 
 And you should be good to go! Feel free to fork and submit pull requests.
