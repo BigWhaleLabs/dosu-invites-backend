@@ -1009,9 +1009,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/secp256k1@npm:^1.4.1":
-  version: 1.4.1
-  resolution: "@noble/secp256k1@npm:1.4.1"
+"@noble/secp256k1@npm:^1.2.14":
+  version: 1.2.14
+  resolution: "@noble/secp256k1@npm:1.2.14"
   checksum: 20021b2307b5c223184b4b8d6f2475f4dcdc8642f7039205457380602e283e6099faa63a3622c16ff4ae04181be4d54e4ef8b0c1f0e4fe0669374509f5cf6ce0
   languageName: node
   linkType: hard
@@ -6921,7 +6921,7 @@ __metadata:
   resolution: "libp2p-crypto@npm:0.21.2"
   dependencies:
     "@noble/ed25519": ^1.5.1
-    "@noble/secp256k1": ^1.4.1
+    "@noble/secp256k1": ^1.2.14
     err-code: ^3.0.1
     iso-random-stream: ^2.0.0
     multiformats: ^9.4.5
