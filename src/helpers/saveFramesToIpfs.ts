@@ -1,8 +1,8 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
-import { contract, getTokenToAddressMap } from '@/helpers/contract'
 import { cutVideoFramesPath, cutVideoPath } from '@/helpers/localPath'
 import { existsSync, readFileSync } from 'fs'
+import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
 import extractFrame = require('ffmpeg-extract-frame')
 import { readdirSync } from 'fs'
@@ -30,24 +30,26 @@ export default async function saveFramesToIpfs() {
 
     const ipfsClient = getIpfsClient()
 
-    readdirSync(cutVideoFramesPath).forEach(async (file) => {
-      const { cid } = await ipfsClient
-        .add(
-          {
-            path: `dosu/invites/${file}`,
-            content: readFileSync(`${cutVideoFramesPath}/${file}`),
-            type: 'file',
-            mtime: new Date(),
-          },
-          { pin: true }
-        )
-        .then()
-      await ipfsClient.name.publish(`/ipfs/${cid}`).then((res) => {
-        console.log(`https://gateway.ipfs.io/ipns/${res.name}`)
+    const files: { path: string; content: Buffer; type: string }[] = []
+
+    readdirSync(cutVideoFramesPath).forEach((file) => {
+      files.push({
+        path: `video/cutVideoFrames/${file}`,
+        content: readFileSync(`${cutVideoFramesPath}/${file}`),
+        type: 'file',
       })
-      contract.setTokenURI(file[0], cid.toString())
-      // Link to the frame: https://ipfs.io/ipfs/${cid}?filename=${file}
     })
+
+    for await (const file of ipfsClient.addAll(files, {
+      pin: true,
+      wrapWithDirectory: true,
+    })) {
+      if (file.path === 'video/cutVideoFrames') {
+        const { name } = await ipfsClient.name.publish(`/ipfs/${file.cid}`)
+        console.log(`Link to IPFS: /ipfs/${file.cid}`)
+        console.log(`Link to IPNS: /ipns/${name}`)
+      }
+    }
   } catch (error) {
     console.error(error)
   }
