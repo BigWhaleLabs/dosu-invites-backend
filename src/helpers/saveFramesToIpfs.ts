@@ -30,13 +30,21 @@ export default async function saveFramesToIpfs() {
 
     const ipfsClient = getIpfsClient()
 
-    const files: { path: string; content: Buffer; type: string }[] = []
+    const files: {
+      path: string
+      content: Buffer
+      type: string
+      pin?: boolean
+    }[] = []
 
     readdirSync(cutVideoFramesPath).forEach((file) => {
+      const name = file.toLowerCase() // Because addresses stored in lower case in the contract
+
       files.push({
-        path: `video/cutVideoFrames/${file}`,
-        content: readFileSync(`${cutVideoFramesPath}/${file}`),
+        path: `video/cutVideoFrames/${name}`,
+        content: readFileSync(`${cutVideoFramesPath}/${name}`),
         type: 'file',
+        pin: true,
       })
     })
 

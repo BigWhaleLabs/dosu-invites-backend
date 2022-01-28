@@ -1,9 +1,19 @@
-import { Body, Controller, Get, IsString, Post } from 'amala'
-import { checkInWhiteList, getTokenToAddressMap } from '@/helpers/contract'
+import { Body, Controller, Get, IsNumber, IsString, Post } from 'amala'
+import {
+  checkInWhiteList,
+  getIpfsLink,
+  getTokenToAddressMap,
+} from '@/helpers/contract'
+import getIpfsClient from '@/helpers/getIpfsClient'
 
 class InviteBody {
   @IsString()
   ethAddress: string
+}
+
+class IpfsBody {
+  @IsNumber()
+  tokenId: number
 }
 
 @Controller('/invites')
@@ -16,5 +26,17 @@ export default class InvitesController {
   @Post('/invite')
   invite(@Body({ required: true }) { ethAddress }: InviteBody) {
     return checkInWhiteList(ethAddress)
+  }
+
+  @Post('/ipfs')
+  async ipfs(@Body({ required: true }) { tokenId }: IpfsBody) {
+    try {
+      const ipfs = getIpfsClient()
+      const ipnsLink = await getIpfsLink(tokenId)
+      const ipfsUri = await ipfs.resolve(ipnsLink)
+      return `https://gateway.ipfs.io${ipfsUri}`
+    } catch (error) {
+      console.error(error)
+    }
   }
 }

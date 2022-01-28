@@ -41,7 +41,7 @@ export async function getTokenToAddressMap(update?: boolean) {
     const invites = await contract.getMintedInvites()
     const tokenToAddressMap: TokenToAddressMap = {}
     Object.keys(invites).forEach((tokenId) => {
-      tokenToAddressMap[+tokenId - 1] = invites[tokenId].ethAddress
+      tokenToAddressMap[+tokenId] = invites[tokenId].ethAddress
     })
     await cache.set('TokenToAddressMap', tokenToAddressMap)
     return tokenToAddressMap
@@ -51,4 +51,8 @@ export async function getTokenToAddressMap(update?: boolean) {
 
 export async function checkInWhiteList(ethAddress: string) {
   return await contract.whitelist(ethAddress)
+}
+
+export async function getIpfsLink(tokenId: number) {
+  return await contract.tokenURI(tokenId)
 }
