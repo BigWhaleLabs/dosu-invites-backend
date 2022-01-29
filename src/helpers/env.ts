@@ -13,4 +13,5 @@ export default cleanEnv(process.env, {
   CONTRACT_ADDRESS: str(),
   INFURA_PROJECT_ID: str(),
   INFURA_PROJECT_SECRET: str(),
+  IPFS_PATH: str(),
 })

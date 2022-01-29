@@ -1,8 +1,9 @@
 import { create } from 'ipfs-http-client'
+import env from '@/helpers/env'
 
 export default function getIpfsClient() {
   const ipfsClient = create({
-    url: 'http://localhost:5001/api/v0',
+    url: env.IPFS_PATH,
   })
 
   return ipfsClient

@@ -16,14 +16,15 @@ And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name                    | Description                              |
-| ----------------------- | ---------------------------------------- |
-| `PORT`                  | Port to run server on (defaults to 1337) |
-| `MONGO`                 | URL of the mongo database                |
-| `ETH_NETWORK`           | Ethereum network                         |
-| `INFURA_PROJECT_ID`     | Infura project id                        |
-| `INFURA_PROJECT_SECRET` | Infura project secret                    |
-| `CONTRACT_ADDRESS`      | Dosu invites contract address            |
+| Name                    | Description                                                   |
+| ----------------------- | ------------------------------------------------------------- |
+| `PORT`                  | Port to run server on (defaults to 1337)                      |
+| `MONGO`                 | URL of the mongo database                                     |
+| `ETH_NETWORK`           | Ethereum network                                              |
+| `INFURA_PROJECT_ID`     | Infura project id                                             |
+| `INFURA_PROJECT_SECRET` | Infura project secret                                         |
+| `CONTRACT_ADDRESS`      | Dosu invites contract address                                 |
+| `IPFS_PATH`             | After running `yarn start-ipfs`, copy the address after `API` |
 
 Also, please, consider looking at `.env.sample`.
 
