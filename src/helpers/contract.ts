@@ -28,7 +28,7 @@ export function setupContractListeners() {
     console.log('Updating the video...')
     await getTokenToAddressMap(true) // Update cached list of invites
     await prepareVideo(+tokenId)
-    await saveFramesToIpfs()
+    await saveFramesToIpfs(+tokenId)
     console.log('The video was updated!')
   })
 }

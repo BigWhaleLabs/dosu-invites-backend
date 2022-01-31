@@ -1,18 +1,28 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import { cutVideoFramesPath, cutVideoPath } from '@/helpers/localPath'
-import { existsSync, readFileSync } from 'fs'
+import { existsSync, mkdirSync, readFileSync, readdirSync } from 'fs'
 import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
 import extractFrame = require('ffmpeg-extract-frame')
-import { readdirSync } from 'fs'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
-export default async function saveFramesToIpfs() {
+type IpfsFile = {
+  path: string
+  content: Buffer
+  type: string
+  pin?: boolean
+}
+
+export default async function saveFramesToIpfs(tokenId?: number) {
   try {
     if (!existsSync(cutVideoPath)) {
       return new Error('Cut Video not found')
+    }
+
+    if (!existsSync(cutVideoFramesPath)) {
+      mkdirSync(cutVideoFramesPath)
     }
 
     const addresses = await getTokenToAddressMap()
@@ -30,14 +40,24 @@ export default async function saveFramesToIpfs() {
 
     const ipfsClient = getIpfsClient()
 
-    const files: {
-      path: string
-      content: Buffer
-      type: string
-      pin?: boolean
-    }[] = []
+    const files: IpfsFile[] = []
 
     readdirSync(cutVideoFramesPath).forEach((file) => {
+      if (tokenId !== undefined) {
+        // Save only specified file
+        const re = new RegExp(`^${tokenId}-.*?`, 'g')
+        if (file.match(re)) {
+          const name = file.toLowerCase()
+          files.push({
+            path: `video/cutVideoFrames/${name}`,
+            content: readFileSync(`${cutVideoFramesPath}/${name}`),
+            type: 'file',
+            pin: true,
+          })
+        }
+        return
+      }
+
       const name = file.toLowerCase() // Because addresses stored in lower case in the contract
 
       files.push({
