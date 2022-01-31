@@ -28,13 +28,12 @@ export default async function saveFramesToIpfs() {
 
     const addresses = await getTokenToAddressMap(false)
 
-    // Get video frames
     Object.keys(addresses).forEach(async (id: string) => {
       await extractFrame({
         input: cutVideoPath,
         fps: 1,
         output: `${cutVideoFramesPath}/${id}-${addresses[id]}.png`,
-        quality: 1, // From 1-31 with 31 being the worst quality
+        quality: 1,
         offset: +id * 1000,
       })
     })
@@ -47,8 +46,6 @@ export default async function saveFramesToIpfs() {
 
     readdirSync(cutVideoFramesPath).forEach((file) => {
       const name = file.toLowerCase() // Because addresses stored in lower case in the contract
-
-      console.log(file)
 
       files.push({
         path: `video/cutVideoFrames/${name}`,
