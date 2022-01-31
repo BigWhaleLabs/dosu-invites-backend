@@ -5,6 +5,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync } from 'fs'
 import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
 import extractFrame = require('ffmpeg-extract-frame')
+import timeout from '@/helpers/tiemout'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
@@ -25,7 +26,7 @@ export default async function saveFramesToIpfs() {
       mkdirSync(cutVideoFramesPath)
     }
 
-    const addresses = await getTokenToAddressMap()
+    const addresses = await getTokenToAddressMap(false)
 
     // Get video frames
     Object.keys(addresses).forEach(async (id: string) => {
@@ -42,8 +43,12 @@ export default async function saveFramesToIpfs() {
 
     const files: IpfsFile[] = []
 
+    await timeout(5000) // Wait so readdir will catch new files
+
     readdirSync(cutVideoFramesPath).forEach((file) => {
       const name = file.toLowerCase() // Because addresses stored in lower case in the contract
+
+      console.log(file)
 
       files.push({
         path: `video/cutVideoFrames/${name}`,

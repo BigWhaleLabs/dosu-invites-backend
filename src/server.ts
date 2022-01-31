@@ -14,9 +14,8 @@ void (async () => {
   await prepareVideo()
   console.log('Video was cut!')
   console.log('Saving frames into IPFS...')
-  void saveFramesToIpfs().then(() =>
-    console.log('Video frames saved into IPFS')
-  )
+  await saveFramesToIpfs()
+  console.log('Video frames saved into IPFS')
   console.log('Setting up contract listeners...')
   setupContractListeners()
   console.log('Contract listeners were set')
