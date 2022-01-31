@@ -33,11 +33,11 @@ export function setupContractListeners() {
   })
 }
 
-export async function getTokenToAddressMap(update?: boolean) {
+export async function getTokenToAddressMap(updateCache?: boolean) {
   const tokenToAddressMap = await cache.get<TokenToAddressMap | null>(
     'TokenToAddressMap'
   )
-  if (!tokenToAddressMap || update) {
+  if (!tokenToAddressMap || updateCache) {
     const invites = await contract.getMintedInvites()
     const tokenToAddressMap: TokenToAddressMap = {}
     Object.keys(invites).forEach((tokenId) => {
