@@ -15,7 +15,7 @@ type IpfsFile = {
   pin?: boolean
 }
 
-export default async function saveFramesToIpfs(tokenId?: number) {
+export default async function saveFramesToIpfs() {
   try {
     if (!existsSync(cutVideoPath)) {
       return new Error('Cut Video not found')
@@ -43,21 +43,6 @@ export default async function saveFramesToIpfs(tokenId?: number) {
     const files: IpfsFile[] = []
 
     readdirSync(cutVideoFramesPath).forEach((file) => {
-      if (tokenId !== undefined) {
-        // Save only specified file
-        const re = new RegExp(`^${tokenId}-.*?`, 'g')
-        if (file.match(re)) {
-          const name = file.toLowerCase()
-          files.push({
-            path: `video/cutVideoFrames/${name}`,
-            content: readFileSync(`${cutVideoFramesPath}/${name}`),
-            type: 'file',
-            pin: true,
-          })
-        }
-        return
-      }
-
       const name = file.toLowerCase() // Because addresses stored in lower case in the contract
 
       files.push({
