@@ -51,12 +51,10 @@ export default async function saveFramesToIpfs() {
         path: `video/cutVideoFrames/${name}`,
         content: readFileSync(`${cutVideoFramesPath}/${name}`),
         type: 'file',
-        pin: true,
       })
     })
 
     for await (const file of ipfsClient.addAll(files, {
-      pin: true,
       wrapWithDirectory: true,
     })) {
       if (file.path === 'video/cutVideoFrames') {
