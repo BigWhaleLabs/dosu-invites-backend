@@ -21,7 +21,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chainsafe/libp2p-noise@npm:^5.0.0":
+"@chainsafe/libp2p-noise@npm:^5.0.0, @chainsafe/libp2p-noise@npm:^5.0.1":
   version: 5.0.2
   resolution: "@chainsafe/libp2p-noise@npm:5.0.2"
   dependencies:
@@ -286,9 +286,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ethersproject/providers@npm:5.5.2":
-  version: 5.5.2
-  resolution: "@ethersproject/providers@npm:5.5.2"
+"@ethersproject/providers@npm:5.5.3":
+  version: 5.5.3
+  resolution: "@ethersproject/providers@npm:5.5.3"
   dependencies:
     "@ethersproject/abstract-provider": ^5.5.0
     "@ethersproject/abstract-signer": ^5.5.0
@@ -309,7 +309,7 @@ __metadata:
     "@ethersproject/web": ^5.5.0
     bech32: 1.1.4
     ws: 7.4.6
-  checksum: f03b78017ffa39880508cfb4f811ef3b5983d222303af06b4ab47b6296a3fa67dcd058534e5e167302e4e3af41c4aa44f8c113a974b84fbaa65c62959c098558
+  checksum: abe27d424361b9499926c45f167c62e81eea611bb7b40d22d427ac1bc6501fff530932c3e0d1effd110be3a8a8f48aed9c48c7d3d478db60f6ed245d724e2dcc
   languageName: node
   linkType: hard
 
@@ -918,7 +918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ipld/dag-cbor@npm:^6.0.4":
+"@ipld/dag-cbor@npm:^6.0.3, @ipld/dag-cbor@npm:^6.0.4":
   version: 6.0.15
   resolution: "@ipld/dag-cbor@npm:6.0.15"
   dependencies:
@@ -992,7 +992,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@multiformats/murmur3@npm:^1.0.1, @multiformats/murmur3@npm:^1.0.3":
+"@multiformats/murmur3@npm:^1.0.3, @multiformats/murmur3@npm:^1.1.1":
   version: 1.1.1
   resolution: "@multiformats/murmur3@npm:1.1.1"
   dependencies:
@@ -1437,7 +1437,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/debug@npm:^4.1.5":
+"@types/debug@npm:^4.1.7":
   version: 4.1.7
   resolution: "@types/debug@npm:4.1.7"
   dependencies:
@@ -1706,13 +1706,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.10.1"
+"@typescript-eslint/eslint-plugin@npm:^5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.10.1
-    "@typescript-eslint/type-utils": 5.10.1
-    "@typescript-eslint/utils": 5.10.1
+    "@typescript-eslint/scope-manager": 5.10.2
+    "@typescript-eslint/type-utils": 5.10.2
+    "@typescript-eslint/utils": 5.10.2
     debug: ^4.3.2
     functional-red-black-tree: ^1.0.1
     ignore: ^5.1.8
@@ -1725,42 +1725,42 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 44d71b4622c0e53bb0c576f2b94bf9274faf0c2f3d5fc0357ecec211add6ebfc96c15a5fa68aab8eede1a928f09631062517617ee83a8d228d2c81215c0156a8
+  checksum: 460808a3c7d0390a7dcc1b2e717c2c4e303a31f9161fbc8c4ecc7bec076285d636d505d2f1ca9932c7a7989ea0fc3a78023be9f342bd8c4bdfe4a9842d0c053a
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/parser@npm:5.10.1"
+"@typescript-eslint/parser@npm:^5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/parser@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.10.1
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/typescript-estree": 5.10.1
+    "@typescript-eslint/scope-manager": 5.10.2
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/typescript-estree": 5.10.2
     debug: ^4.3.2
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 36e94b3fb5010f09311f1667f8beed1ece46677e738424df78e266eef0957e33671d505a7979d775e863b553d509ce8dbee6201a6994da5282ff38f8e1ae0303
+  checksum: c83e3afee090e9cc830d6c59cd87681a83ae95f2daa848040f2e67ef34f87c5ec707a571b3ccb31b67adc0447b22b62c048a6cb088e661801dacb9c2cf070a9c
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/scope-manager@npm:5.10.1"
+"@typescript-eslint/scope-manager@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/scope-manager@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/visitor-keys": 5.10.1
-  checksum: a4f802ca683bcb3db0e14739d02e680f0f51b6562c23380ea9e0878a70f638572650bd2dbc62f8d74bc39657c053c3e6469a0d4179d3d99bb94fd47bd14d6ecf
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/visitor-keys": 5.10.2
+  checksum: 22c8ac9047a1a276e0b911eca0eee30c4f7f7089688dca36314da28143d349c504e542116d3e201d52da50b212f38b2125e3918e6ae2e2b0b57964fb1cdf8fcd
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/type-utils@npm:5.10.1"
+"@typescript-eslint/type-utils@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/type-utils@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/utils": 5.10.1
+    "@typescript-eslint/utils": 5.10.2
     debug: ^4.3.2
     tsutils: ^3.21.0
   peerDependencies:
@@ -1768,23 +1768,23 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: f7310e036490c47bce132ad4c8185dc253eb5afb954788335811f46ae36c0ea92816319ca1072481f9a8dbac3cd36cc22a8cdc86f2014d0882b8c4029c69d491
+  checksum: 7732c826ef6c798af0f45b85f0389688e614de16c7c2c7e446a664787df360242cf2bc9d68d6ce1993f1bfc289b5d6a75a400fc968b7ded187c30c40f978de52
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/types@npm:5.10.1"
-  checksum: e8bbedae74637c35677aab92eceb154e8f1b100b6015d4aa20b5d52bb2e486e50733feca07610406763e1cc36c448a97ca77f058f4e07e7c61bd8d830c092030
+"@typescript-eslint/types@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/types@npm:5.10.2"
+  checksum: fa44dbd31d12f16ada6a6e7dba61ff90bf955b400f314f7378d9775cc8e13ef5da3318e89a90c3c3f75d50179e6be104ed8f90d4e77a02d6f7793b346bf25f15
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/typescript-estree@npm:5.10.1"
+"@typescript-eslint/typescript-estree@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/typescript-estree@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/visitor-keys": 5.10.1
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/visitor-keys": 5.10.2
     debug: ^4.3.2
     globby: ^11.0.4
     is-glob: ^4.0.3
@@ -1793,33 +1793,33 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 5721e99baa9b286a474a22c4b08e6ac5a0d79435e7f2a91e876e6a2135a44244f0a83ff42cc1cd2ac23cc6ee014965baaa84481e9017f703c45f22e474620c7f
+  checksum: 2fdad1448578ee5c7f5876c998de50e2fa5fd6eed9effbfa9b0cf2579afe195964f0e4ebaa5d94ae228096cddf016500e9c8cc2f60c3dff981f09ebb42e5de53
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/utils@npm:5.10.1"
+"@typescript-eslint/utils@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/utils@npm:5.10.2"
   dependencies:
     "@types/json-schema": ^7.0.9
-    "@typescript-eslint/scope-manager": 5.10.1
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/typescript-estree": 5.10.1
+    "@typescript-eslint/scope-manager": 5.10.2
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/typescript-estree": 5.10.2
     eslint-scope: ^5.1.1
     eslint-utils: ^3.0.0
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: beca5b5eb56b6236215baa409619fc8eea700e733094683c3ac39236bf442793b61fcf3ad6fe57ccec265649962d84c1951900e47bd55208ed50c4c2c7d8cf6b
+  checksum: d0dde3066f52405dffc2cbccd43d2aa2d9336510f178aa43812d616c951ea45f83693e2f6a88e3abfc94e2cc5f9eb3f2be9221a38848fe70aaffc294794c9d53
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/visitor-keys@npm:5.10.1"
+"@typescript-eslint/visitor-keys@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/visitor-keys@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/types": 5.10.1
+    "@typescript-eslint/types": 5.10.2
     eslint-visitor-keys: ^3.0.0
-  checksum: 7e1e1a41b2df797534ee56c0d9ae2a056e0ca0ca019b31125fd52d7deb0e802d899920031f2dbf88a951e6752d8fcbd9fa904eaeccb50cf30d2b92b54fd7879d
+  checksum: f80caa1f0d71da096e9e18728b76046286cad691b178c0d101b71e5b553ee4a427ae2c2f8b9bc789dce266f62b026b7ca88ddafd52fde4f0dbb24e05765629b7
   languageName: node
   linkType: hard
 
@@ -1834,15 +1834,6 @@ __metadata:
   version: 1.1.1
   resolution: "abbrev@npm:1.1.1"
   checksum: a4a97ec07d7ea112c517036882b2ac22f3109b7b19077dc656316d07d308438aac28e4d9746dc4d84bf6b1e75b4a7b0a5f3cb30592419f128ca9a8cee3bcfa17
-  languageName: node
-  linkType: hard
-
-"abort-controller@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "abort-controller@npm:3.0.0"
-  dependencies:
-    event-target-shim: ^5.0.0
-  checksum: 170bdba9b47b7e65906a28c8ce4f38a7a369d78e2271706f020849c1bfe0ee2067d4261df8bbb66eb84f79208fd5b710df759d64191db58cfba7ce8ef9c54b75
   languageName: node
   linkType: hard
 
@@ -2008,16 +1999,6 @@ __metadata:
   dependencies:
     color-convert: ^2.0.1
   checksum: 513b44c3b2105dd14cc42a19271e80f386466c4be574bccf60b627432f9198571ebf4ab1e4c3ba17347658f4ee1711c163d574248c0c1cdc2d5917a0ad582ec4
-  languageName: node
-  linkType: hard
-
-"any-signal@npm:^2.1.1, any-signal@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "any-signal@npm:2.1.2"
-  dependencies:
-    abort-controller: ^3.0.0
-    native-abort-controller: ^1.0.3
-  checksum: 498603e30357f82e438ddc972086b3180ddbaf5ea9772f535d103b754711eb13d4c24577e497d5a1146e571ee38f167c316ace7dc1a03b62a8a8c7677e9d660f
   languageName: node
   linkType: hard
 
@@ -2978,6 +2959,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dag-jose@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "dag-jose@npm:1.0.0"
+  dependencies:
+    "@ipld/dag-cbor": ^6.0.3
+    multiformats: ^9.0.2
+  checksum: 2d95e938f08c383718dd6f07d92063f164bb85be831f624f122687ca3f4d365a76320c3f6f16cfbe013c581198504728abd226567775ef35fb40176e1cb23112
+  languageName: node
+  linkType: hard
+
 "dashdash@npm:^1.12.0":
   version: 1.14.1
   resolution: "dashdash@npm:1.14.1"
@@ -2987,9 +2978,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"datastore-core@npm:^6.0.5, datastore-core@npm:^6.0.7":
-  version: 6.0.7
-  resolution: "datastore-core@npm:6.0.7"
+"datastore-core@npm:^7.0.0":
+  version: 7.0.1
+  resolution: "datastore-core@npm:7.0.1"
   dependencies:
     debug: ^4.1.1
     err-code: ^3.0.1
@@ -3002,50 +2993,50 @@ __metadata:
     it-pushable: ^1.4.2
     it-take: ^1.0.1
     uint8arrays: ^3.0.0
-  checksum: 565c37e3f0a5500bb9e96f27be68f14bb5250d2885f536b1adc69f0dfa21dc7795fc98ad029219b425bcc1979535ac48f9925079cee493a6dc708e75df931e4a
+  checksum: beed275a49d871304e755c9e727f89d4f4a9fbd8f60608ae3d5f1df423597b610d3e189fae56469cc2a2c2d7a56d0e13d3ee3b72914b7d91a08028fa41ca9ecc
   languageName: node
   linkType: hard
 
-"datastore-fs@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "datastore-fs@npm:6.0.1"
+"datastore-fs@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "datastore-fs@npm:7.0.0"
   dependencies:
-    datastore-core: ^6.0.5
+    datastore-core: ^7.0.0
     fast-write-atomic: ^0.2.0
     interface-datastore: ^6.0.2
     it-glob: ^1.0.1
     it-map: ^1.0.5
     it-parallel-batch: ^1.0.9
     mkdirp: ^1.0.4
-  checksum: f76a2cf7df3edd3dfd131cf8da8c0c60f761e326171837d7039e1c55edddbd62f89697fc3ba96888a8309ccdbd5c77c77e0774b850b32a4a7f9349d31a9cf543
+  checksum: cd2a3f66ca6debc88acc09280555711e003ba03bf537e47a9f47b41524ba8a59cd7521f08465220cc3a6e11cc97dc778dab7c97c8403f7eb0f7d30d9ef00b5fe
   languageName: node
   linkType: hard
 
-"datastore-level@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "datastore-level@npm:7.0.1"
+"datastore-level@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "datastore-level@npm:8.0.0"
   dependencies:
-    datastore-core: ^6.0.5
+    datastore-core: ^7.0.0
     interface-datastore: ^6.0.2
     it-filter: ^1.0.2
     it-map: ^1.0.5
     it-sort: ^1.0.0
     it-take: ^1.0.1
     level: ^7.0.0
-  checksum: 4ba115b2ca93e39cdeb4f6ae405e6939c1a443d2a23be6da55690d99d94b97dda822249513bec5b38647c0fc87f65784b2eceb135fac250801861187b3b5e3a9
+  checksum: e61f35672fca685e2ce5833e1546801be06c81863703e370ba7b56b8d0cb264b9429d909d4ed6fef5c2316fd48ff5deccd807a2b88d252af61292a5aedd5648b
   languageName: node
   linkType: hard
 
-"datastore-pubsub@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "datastore-pubsub@npm:1.0.0"
+"datastore-pubsub@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "datastore-pubsub@npm:2.0.0"
   dependencies:
-    datastore-core: ^6.0.7
+    datastore-core: ^7.0.0
     debug: ^4.2.0
     err-code: ^3.0.1
     interface-datastore: ^6.0.2
     uint8arrays: ^3.0.0
-  checksum: 57259df7cea882cf519576efb902a37bd62dfa457977d3d4614a523f9ba049d6675ff12456b1af3b38825b4e772a5b9a80d51c687402c9f54898dee1775bba56
+  checksum: 7a1d0f95a4c4b2dc589854dc148e2b128c71a987a2082de3a0eb5950d9ab37511fd004e24e2ddd131e5a28d9f37a78fc0bd51e8acaaaf196c1afa3391641076b
   languageName: node
   linkType: hard
 
@@ -3315,32 +3306,32 @@ __metadata:
     "@types/koa-bodyparser": ^4.3.5
     "@types/koa-router": ^7.4.4
     "@types/koa__cors": ^3.1.1
-    "@typescript-eslint/eslint-plugin": ^5.10.1
-    "@typescript-eslint/parser": ^5.10.1
+    "@typescript-eslint/eslint-plugin": ^5.10.2
+    "@typescript-eslint/parser": ^5.10.2
     amala: ^7.0.0
     cache-manager: ^3.6.0
-    dotenv: ^14.3.0
+    dotenv: ^15.0.0
     envalid: ^7.2.2
-    eslint: ^8.7.0
+    eslint: ^8.8.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-import: ^2.25.4
     eslint-plugin-json: ^3.1.0
     eslint-plugin-json-format: ^2.0.1
-    eslint-plugin-no-relative-import-paths: ^1.1.0
+    eslint-plugin-no-relative-import-paths: ^1.2.0
     eslint-plugin-node: ^11.1.0
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-sort-imports-es6-autofix: ^0.6.0
-    ethers: ^5.5.3
+    ethers: ^5.5.4
     ffmpeg-extract-frame: ^1.0.2
     ffmpeg-extract-frames: ^2.0.2
     fluent-ffmpeg: ^2.1.2
-    ipfs: ^0.61.0
-    ipfs-http-client: ^55.0.0
+    ipfs: ^0.62.0
+    ipfs-http-client: ^56.0.0
     koa: ^2.13.4
     koa-bodyparser: ^4.3.0
     koa-router: ^10.1.1
     module-alias: ^2.2.2
-    mongoose: ^6.1.8
+    mongoose: ^6.1.10
     prettier: ^2.5.1
     source-map-support: ^0.5.21
     tsc-watch: ^4.6.0
@@ -3368,10 +3359,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^14.3.0":
-  version: 14.3.2
-  resolution: "dotenv@npm:14.3.2"
-  checksum: 86c06758915d6facc35275f4a7fafc16705b6f3b44befaa8abca91367991efc8ff8db5437d3cc14778231d19fb97610fe82d60f8a53ba723cdb69fe4171439aa
+"dotenv@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "dotenv@npm:15.0.0"
+  checksum: be5d852b2ad1708780e7038481c0687ce4bb9edf354d439872511e966a5f28c083f296e1d1c182256d695bfdd67e320382eb3b0f2e9d83efa3615cd1757257ab
   languageName: node
   linkType: hard
 
@@ -3791,10 +3782,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-no-relative-import-paths@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "eslint-plugin-no-relative-import-paths@npm:1.1.0"
-  checksum: d5ebd9076dcfdc5006b5d86bc3ac5dc85858847dd527fd4a1a6029d1e5e35b0418db490bc2e7aab0aeae0f79615c754e7cd21adb25abe5d1286aef0708d61039
+"eslint-plugin-no-relative-import-paths@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "eslint-plugin-no-relative-import-paths@npm:1.2.0"
+  checksum: e61c5e397360307b1aac25eac1c70735bece95a98d8b956f665c7fec4342d0513b59f959fdc7c217434038be9973b6e8a15b150274896d5d541e87d8a5db62dc
   languageName: node
   linkType: hard
 
@@ -3899,9 +3890,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.7.0":
-  version: 8.7.0
-  resolution: "eslint@npm:8.7.0"
+"eslint@npm:^8.8.0":
+  version: 8.8.0
+  resolution: "eslint@npm:8.8.0"
   dependencies:
     "@eslint/eslintrc": ^1.0.5
     "@humanwhocodes/config-array": ^0.9.2
@@ -3940,7 +3931,7 @@ __metadata:
     v8-compile-cache: ^2.0.3
   bin:
     eslint: bin/eslint.js
-  checksum: 1c80375a48b0fe3ccae3c6354323e4f0e92e970f23abc5b9705b90b7aef514b69ebd0a63e74962d30789986c91fa41c0e25cd2f98f19e9e2a2d36aafdfc9ccc9
+  checksum: 41a7e85bf84cf9f2d758ef3e8d08020a39a2836703728b59535684681349bd021c2c6e24174462b844a914870d707d2151e0371198899d957b444de91adaa435
   languageName: node
   linkType: hard
 
@@ -3994,9 +3985,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ethers@npm:^5.5.3":
-  version: 5.5.3
-  resolution: "ethers@npm:5.5.3"
+"ethers@npm:^5.5.4":
+  version: 5.5.4
+  resolution: "ethers@npm:5.5.4"
   dependencies:
     "@ethersproject/abi": 5.5.0
     "@ethersproject/abstract-provider": 5.5.1
@@ -4016,7 +4007,7 @@ __metadata:
     "@ethersproject/networks": 5.5.2
     "@ethersproject/pbkdf2": 5.5.0
     "@ethersproject/properties": 5.5.0
-    "@ethersproject/providers": 5.5.2
+    "@ethersproject/providers": 5.5.3
     "@ethersproject/random": 5.5.1
     "@ethersproject/rlp": 5.5.0
     "@ethersproject/sha2": 5.5.0
@@ -4028,7 +4019,7 @@ __metadata:
     "@ethersproject/wallet": 5.5.0
     "@ethersproject/web": 5.5.1
     "@ethersproject/wordlists": 5.5.0
-  checksum: 0ac0a9e3d37468894d5f283bb06a60c78a8c82fc43e834004b97046b93df35d2aed83c07e7dc8c4a664fa6b25989a47d303e58ee25e7ad6490b11cc50e74d54a
+  checksum: 5981da616471a35baf0a5919e851cd0e755eaa7d8d7ed5e54da03a50cafc38fe160f6c5e92ab953ab583778c53d8b4132ade9a157bcbb2fc05ace647db802ec3
   languageName: node
   linkType: hard
 
@@ -4051,13 +4042,6 @@ __metadata:
     stream-combiner: ~0.0.4
     through: ~2.3.1
   checksum: 80b467820b6daf824d9fb4345d2daf115a056e5c104463f2e98534e92d196a27f2df5ea2aa085624db26f4c45698905499e881d13bc7c01f7a13eac85be72a22
-  languageName: node
-  linkType: hard
-
-"event-target-shim@npm:^5.0.0":
-  version: 5.0.1
-  resolution: "event-target-shim@npm:5.0.1"
-  checksum: 1ffe3bb22a6d51bdeb6bf6f7cf97d2ff4a74b017ad12284cc9e6a279e727dc30a5de6bb613e5596ff4dc3e517841339ad09a7eec44266eccb1aa201a30448166
   languageName: node
   linkType: hard
 
@@ -5220,13 +5204,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipfs-bitswap@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "ipfs-bitswap@npm:9.0.0"
+"ipfs-bitswap@npm:^10.0.1":
+  version: 10.0.2
+  resolution: "ipfs-bitswap@npm:10.0.2"
   dependencies:
     "@vascosantos/moving-average": ^1.1.0
-    abort-controller: ^3.0.0
-    any-signal: ^2.1.2
+    any-signal: ^3.0.0
     blockstore-core: ^1.0.2
     debug: ^4.2.0
     err-code: ^3.0.1
@@ -5234,22 +5217,21 @@ __metadata:
     it-length-prefixed: ^5.0.2
     it-pipe: ^1.1.0
     just-debounce-it: ^1.1.0
-    libp2p-interfaces: ^2.0.1
+    libp2p-interfaces: ^4.0.0
     multiaddr: ^10.0.0
     multiformats: ^9.0.4
-    native-abort-controller: ^1.0.3
     protobufjs: ^6.10.2
     readable-stream: ^3.6.0
     uint8arrays: ^3.0.0
     varint: ^6.0.0
     varint-decoder: ^1.0.0
-  checksum: 21a93c3c7f885b65cf00289c1eaf8198e9455b62eda14c1babde340a7db1d4184fe5a98b46708c900f832e2499aeae958eb62b280313204406adf072afe850ca
+  checksum: 5603496d2f62c7d4c3103c614f5b0bbf9f8d400a42dc8f425aa644efbdfbb7073601e3e250f582e76618f6d561d3086babd94bbbaf214b2e8b44ee1f54396809
   languageName: node
   linkType: hard
 
-"ipfs-cli@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "ipfs-cli@npm:0.11.0"
+"ipfs-cli@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "ipfs-cli@npm:0.12.0"
   dependencies:
     "@ipld/dag-cbor": ^7.0.0
     "@ipld/dag-json": ^8.0.1
@@ -5259,12 +5241,12 @@ __metadata:
     err-code: ^3.0.1
     execa: ^5.0.0
     get-folder-size: ^2.0.1
-    ipfs-core: ^0.13.0
-    ipfs-core-types: ^0.9.0
-    ipfs-core-utils: ^0.13.0
-    ipfs-daemon: ^0.11.0
-    ipfs-http-client: ^55.0.0
-    ipfs-repo: ^13.0.6
+    ipfs-core: ^0.14.0
+    ipfs-core-types: ^0.10.0
+    ipfs-core-utils: ^0.14.0
+    ipfs-daemon: ^0.12.0
+    ipfs-http-client: ^56.0.0
+    ipfs-repo: ^14.0.1
     ipfs-utils: ^9.0.2
     it-all: ^1.0.4
     it-concat: ^2.0.0
@@ -5276,7 +5258,7 @@ __metadata:
     it-split: ^1.0.0
     it-tar: ^4.0.0
     jsondiffpatch: ^0.4.1
-    libp2p-crypto: ^0.21.0
+    libp2p-crypto: ^0.21.1
     mafmt: ^10.0.0
     multiaddr: ^10.0.0
     multiaddr-to-uri: ^8.0.0
@@ -5287,31 +5269,33 @@ __metadata:
     stream-to-it: ^0.2.2
     uint8arrays: ^3.0.0
     yargs: ^16.0.3
-  checksum: a7cfaa01e3b009f8a533934cc1346ab4bdd672f79585c88513555eded8f111758c9a21de12e1d7b0ac3a5f62670c31da730e0f090752142e5adcaa6722396a78
+  checksum: 292a18f2e536ec89f76628987109b0b0d5c782a3b283bd602dd21f8e30d902713aef0c6b289418ac337508d07de72449fbd91c33f1e25c05f105564a22260bd9
   languageName: node
   linkType: hard
 
-"ipfs-core-config@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "ipfs-core-config@npm:0.2.0"
+"ipfs-core-config@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "ipfs-core-config@npm:0.3.0"
   dependencies:
-    "@chainsafe/libp2p-noise": ^5.0.0
+    "@chainsafe/libp2p-noise": ^5.0.1
     blockstore-datastore-adapter: ^2.0.2
-    datastore-core: ^6.0.7
-    datastore-fs: ^6.0.1
-    datastore-level: ^7.0.1
+    datastore-core: ^7.0.0
+    datastore-fs: ^7.0.0
+    datastore-level: ^8.0.0
     debug: ^4.1.1
     err-code: ^3.0.1
     hashlru: ^2.3.0
-    ipfs-repo: ^13.0.6
+    interface-datastore: ^6.0.2
+    ipfs-repo: ^14.0.1
     ipfs-utils: ^9.0.2
     ipns: ^0.16.0
     is-ipfs: ^6.0.1
     it-all: ^1.0.4
     it-drain: ^1.0.3
-    libp2p-floodsub: ^0.28.0
-    libp2p-gossipsub: ^0.12.0
-    libp2p-kad-dht: ^0.27.4
+    it-foreach: ^0.1.1
+    libp2p-floodsub: ^0.29.0
+    libp2p-gossipsub: ^0.13.0
+    libp2p-kad-dht: ^0.28.5
     libp2p-mdns: ^0.18.0
     libp2p-mplex: ^0.10.2
     libp2p-tcp: ^0.17.1
@@ -5319,31 +5303,31 @@ __metadata:
     libp2p-websockets: ^0.16.2
     p-queue: ^6.6.1
     uint8arrays: ^3.0.0
-  checksum: 0c3daf7a88ddd7e2eca5a9c1f36add8d968e6c9415da4ebfdf4f2590ef11cfaa3324219d2462bb049944c490d0373b7bcd371546698c1974c6988c76d70fbb64
+  checksum: e382f6580e295ada217e66ebe01a8221d29f83ce673a9cd6b5cd7efd6d6d9981330638980e00e7b43038b99589636effe0016c8c7c2b4d49cb165ac9e856e561
   languageName: node
   linkType: hard
 
-"ipfs-core-types@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "ipfs-core-types@npm:0.9.0"
+"ipfs-core-types@npm:^0.10.0":
+  version: 0.10.0
+  resolution: "ipfs-core-types@npm:0.10.0"
   dependencies:
     interface-datastore: ^6.0.2
     multiaddr: ^10.0.0
     multiformats: ^9.4.13
-  checksum: 22db8e039348dc372c99b45a87ce8dce81e15fa710cee410c1731004d528e0bd0da96b5a4c5571d501313fae93316af3b902c2220c486d2fade2e53f07a7d17b
+  checksum: 704da0953db8371219bd65737cd18fb8e35ed5234912a8c88b78e0d996706f482429fe854237806e46a94e28eca2915bcceaceb7f19560172592330382b88303
   languageName: node
   linkType: hard
 
-"ipfs-core-utils@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "ipfs-core-utils@npm:0.13.0"
+"ipfs-core-utils@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "ipfs-core-utils@npm:0.14.0"
   dependencies:
-    any-signal: ^2.1.2
+    any-signal: ^3.0.0
     blob-to-it: ^1.0.1
     browser-readablestream-to-it: ^1.0.1
     debug: ^4.1.1
     err-code: ^3.0.1
-    ipfs-core-types: ^0.9.0
+    ipfs-core-types: ^0.10.0
     ipfs-unixfs: ^6.0.3
     ipfs-utils: ^9.0.2
     it-all: ^1.0.4
@@ -5356,28 +5340,29 @@ __metadata:
     multiformats: ^9.4.13
     nanoid: ^3.1.23
     parse-duration: ^1.0.0
-    timeout-abort-controller: ^2.0.0
+    timeout-abort-controller: ^3.0.0
     uint8arrays: ^3.0.0
-  checksum: af46717a69cf2e4f1bfbd77c7c1951eaa8b9619bdb888ca971849dc2d2468aceb0238e2f47ae45568478b2ceb1428ae7061239afc92aac06691f7bea9e21e4eb
+  checksum: a5750e196ceab74964e9279e3e1346498ee76a589d85dde1a7c4709bd0e49b620e85bba00af49ef65613194fd6deabaa96108f5059463b0b8d92e89d127e773c
   languageName: node
   linkType: hard
 
-"ipfs-core@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "ipfs-core@npm:0.13.0"
+"ipfs-core@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "ipfs-core@npm:0.14.0"
   dependencies:
     "@chainsafe/libp2p-noise": ^5.0.0
     "@ipld/car": ^3.1.0
     "@ipld/dag-cbor": ^7.0.0
     "@ipld/dag-json": ^8.0.1
     "@ipld/dag-pb": ^2.1.3
-    "@multiformats/murmur3": ^1.0.1
-    any-signal: ^2.1.2
+    "@multiformats/murmur3": ^1.1.1
+    any-signal: ^3.0.0
     array-shuffle: ^2.0.0
     blockstore-core: ^1.0.2
     blockstore-datastore-adapter: ^2.0.2
-    datastore-core: ^6.0.7
-    datastore-pubsub: ^1.0.0
+    dag-jose: ^1.0.0
+    datastore-core: ^7.0.0
+    datastore-pubsub: ^2.0.0
     debug: ^4.1.1
     dlv: ^1.1.3
     err-code: ^3.0.1
@@ -5385,12 +5370,12 @@ __metadata:
     hashlru: ^2.3.0
     interface-blockstore: ^2.0.2
     interface-datastore: ^6.0.2
-    ipfs-bitswap: ^9.0.0
-    ipfs-core-config: ^0.2.0
-    ipfs-core-types: ^0.9.0
-    ipfs-core-utils: ^0.13.0
-    ipfs-http-client: ^55.0.0
-    ipfs-repo: ^13.0.6
+    ipfs-bitswap: ^10.0.1
+    ipfs-core-config: ^0.3.0
+    ipfs-core-types: ^0.10.0
+    ipfs-core-utils: ^0.14.0
+    ipfs-http-client: ^56.0.0
+    ipfs-repo: ^14.0.1
     ipfs-unixfs: ^6.0.3
     ipfs-unixfs-exporter: ^7.0.3
     ipfs-unixfs-importer: ^9.0.3
@@ -5412,9 +5397,9 @@ __metadata:
     it-tar: ^4.0.0
     it-to-buffer: ^2.0.0
     just-safe-set: ^2.2.1
-    libp2p: ^0.35.4
+    libp2p: ^0.36.2
     libp2p-bootstrap: ^0.14.0
-    libp2p-crypto: ^0.21.0
+    libp2p-crypto: ^0.21.1
     libp2p-delegated-content-routing: ^0.11.1
     libp2p-delegated-peer-routing: ^0.11.0
     libp2p-record: ^0.10.3
@@ -5424,31 +5409,30 @@ __metadata:
     multiaddr: ^10.0.0
     multiaddr-to-uri: ^8.0.0
     multiformats: ^9.4.13
-    native-abort-controller: ^1.0.3
     pako: ^1.0.2
     parse-duration: ^1.0.0
     peer-id: ^0.16.0
-    timeout-abort-controller: ^2.0.0
+    timeout-abort-controller: ^3.0.0
     uint8arrays: ^3.0.0
-  checksum: d2a43bea0dad94cec3ddba027b3f7bb3054c15ac674f85594f61aa629c156858a6bb42dc824e8b90e853a45c68f1d08841c9431ee601b6272398c52a2a04ef69
+  checksum: 48a12791b3f21b3e4e99415ebc868bca7df73f2028a380098484e50b73fbcdb0373442dd864240764884030113c9cd6e0eed54b08acdadb847b5abf8d199fc00
   languageName: node
   linkType: hard
 
-"ipfs-daemon@npm:^0.11.0":
-  version: 0.11.0
-  resolution: "ipfs-daemon@npm:0.11.0"
+"ipfs-daemon@npm:^0.12.0":
+  version: 0.12.0
+  resolution: "ipfs-daemon@npm:0.12.0"
   dependencies:
     "@mapbox/node-pre-gyp": ^1.0.5
     debug: ^4.1.1
     electron-webrtc: ^0.3.0
-    ipfs-core: ^0.13.0
-    ipfs-core-types: ^0.9.0
-    ipfs-grpc-server: ^0.8.0
-    ipfs-http-gateway: ^0.8.0
-    ipfs-http-server: ^0.10.0
+    ipfs-core: ^0.14.0
+    ipfs-core-types: ^0.10.0
+    ipfs-grpc-server: ^0.8.1
+    ipfs-http-gateway: ^0.9.0
+    ipfs-http-server: ^0.11.0
     ipfs-utils: ^9.0.2
     just-safe-set: ^2.2.1
-    libp2p: ^0.35.4
+    libp2p: ^0.36.2
     libp2p-webrtc-star: ^0.25.0
     prom-client: ^14.0.1
     wrtc: ^0.4.6
@@ -5459,7 +5443,7 @@ __metadata:
       optional: true
     wrtc:
       optional: true
-  checksum: 2fc392b85f097ff6b47e710d61e7f0fc45644bb81b228730e94216c03b1f2b8be0b6535b406b0640cffdfea60778505930d1d51f5808546026cecc2a17f00878
+  checksum: c7eb1e262ac78ca830cfa0c3dd1088f6637d9918fcbdb8b2471cc8866f332ad23a93732f683215df944c4d47fdb9f7006520dba52b5f1461e031e20767b99f79
   languageName: node
   linkType: hard
 
@@ -5470,15 +5454,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipfs-grpc-server@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "ipfs-grpc-server@npm:0.8.0"
+"ipfs-grpc-server@npm:^0.8.1":
+  version: 0.8.1
+  resolution: "ipfs-grpc-server@npm:0.8.1"
   dependencies:
     "@grpc/grpc-js": ^1.1.8
     change-case: ^4.1.1
     coercer: ^1.1.2
     debug: ^4.1.1
-    ipfs-core-types: ^0.9.0
+    ipfs-core-types: ^0.10.0
     ipfs-grpc-protocol: ^0.5.5
     it-first: ^1.0.4
     it-map: ^1.0.4
@@ -5489,48 +5473,47 @@ __metadata:
     nanoid: ^3.1.23
     protobufjs: ^6.10.2
     ws: ^7.3.1
-  checksum: 95efb9a963ccf42db550c1e558c4ae9607990fd997364b83537112a46be2a776aab47063730b017784c54808ce670b3a7165658e531f060eecb2956e3d69553d
+  checksum: 19dd63363cf3cd61d9bc59329a57133903b0003e9ab95de4eb74ed1eb4329ba9c5748b7fe13b7d04f7544a0c1da0c8947f140e4447dac38d49659fa8aa590f97
   languageName: node
   linkType: hard
 
-"ipfs-http-client@npm:^55.0.0":
-  version: 55.0.0
-  resolution: "ipfs-http-client@npm:55.0.0"
+"ipfs-http-client@npm:^56.0.0":
+  version: 56.0.0
+  resolution: "ipfs-http-client@npm:56.0.0"
   dependencies:
     "@ipld/dag-cbor": ^7.0.0
     "@ipld/dag-json": ^8.0.1
     "@ipld/dag-pb": ^2.1.3
-    abort-controller: ^3.0.0
-    any-signal: ^2.1.2
+    any-signal: ^3.0.0
+    dag-jose: ^1.0.0
     debug: ^4.1.1
     err-code: ^3.0.1
-    ipfs-core-types: ^0.9.0
-    ipfs-core-utils: ^0.13.0
+    ipfs-core-types: ^0.10.0
+    ipfs-core-utils: ^0.14.0
     ipfs-utils: ^9.0.2
     it-first: ^1.0.6
     it-last: ^1.0.4
     merge-options: ^3.0.4
     multiaddr: ^10.0.0
     multiformats: ^9.4.13
-    native-abort-controller: ^1.0.3
     parse-duration: ^1.0.0
     stream-to-it: ^0.2.2
     uint8arrays: ^3.0.0
-  checksum: b44394475dd9f6ef2e68cf22fb5bacf93c1a8967712f12a56baf9e90f183d625569bcabfe2e7c0d1cd2f0a2eed577ab8282f5a737552faf83d3b8a82d7910494
+  checksum: 209adb75693391062ee67941231a96c18a805ca7bc138ce6e388d7a41b0b3cf67d7d316543c565ca625ce15a915b96158df8fcf90b1c9fb2471102074d39aa1a
   languageName: node
   linkType: hard
 
-"ipfs-http-gateway@npm:^0.8.0":
-  version: 0.8.0
-  resolution: "ipfs-http-gateway@npm:0.8.0"
+"ipfs-http-gateway@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "ipfs-http-gateway@npm:0.9.0"
   dependencies:
     "@hapi/ammo": ^5.0.1
     "@hapi/boom": ^9.1.0
     "@hapi/hapi": ^20.0.0
     debug: ^4.1.1
     hapi-pino: ^8.3.0
-    ipfs-core-types: ^0.9.0
-    ipfs-http-response: ^1.0.6
+    ipfs-core-types: ^0.10.0
+    ipfs-http-response: ^2.0.0
     is-ipfs: ^6.0.1
     it-last: ^1.0.4
     it-to-stream: ^1.0.0
@@ -5538,13 +5521,13 @@ __metadata:
     multiformats: ^9.4.13
     uint8arrays: ^3.0.0
     uri-to-multiaddr: ^6.0.0
-  checksum: e611069be44d7bdef51adefafa519b146b3b914a290be9159c2042fcfed3792f18bf6cf1f8c2b9b1a9af2599d19c9e2260e9e9bbf913a148b34a13fa6eee7d9a
+  checksum: 5f7f83111c22fdeba580b7c9108c3383bd819964d087abb88b244678c7afad66690824c19df598b0b28b7c11f1fd1f5e997248b9d3e7d4cea1ed5362febbefe7
   languageName: node
   linkType: hard
 
-"ipfs-http-response@npm:^1.0.6":
-  version: 1.0.6
-  resolution: "ipfs-http-response@npm:1.0.6"
+"ipfs-http-response@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "ipfs-http-response@npm:2.0.0"
   dependencies:
     debug: ^4.3.1
     ejs: ^3.1.6
@@ -5556,27 +5539,26 @@ __metadata:
     it-to-stream: ^1.0.0
     mime-types: ^2.1.30
     p-try-each: ^1.0.1
-  checksum: 2ef011d8ed38d9b3bd8f6ba7662e285fdfa2c0830c1f187c52dd1711ebf86586bc8e90bf67926cb6983947d8a41d45aea5c3e9d1e3b0b889337467a39817a331
+  checksum: 840d8b8873da87a53672808e5efaf894727c4f6353fe201364058dcc6577b1fb0eb830c1e744c72defbaddc556b22446739c3196e4420e3b2574d7b37185ff42
   languageName: node
   linkType: hard
 
-"ipfs-http-server@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "ipfs-http-server@npm:0.10.0"
+"ipfs-http-server@npm:^0.11.0":
+  version: 0.11.0
+  resolution: "ipfs-http-server@npm:0.11.0"
   dependencies:
     "@hapi/boom": ^9.1.0
     "@hapi/content": ^5.0.2
     "@hapi/hapi": ^20.0.0
     "@ipld/dag-pb": ^2.1.3
-    abort-controller: ^3.0.0
-    any-signal: ^2.1.2
+    any-signal: ^3.0.0
     debug: ^4.1.1
     dlv: ^1.1.3
     err-code: ^3.0.1
     hapi-pino: ^8.3.0
-    ipfs-core-types: ^0.9.0
-    ipfs-core-utils: ^0.13.0
-    ipfs-http-gateway: ^0.8.0
+    ipfs-core-types: ^0.10.0
+    ipfs-core-utils: ^0.14.0
+    ipfs-http-gateway: ^0.9.0
     ipfs-unixfs: ^6.0.3
     it-all: ^1.0.4
     it-drain: ^1.0.3
@@ -5593,53 +5575,53 @@ __metadata:
     just-safe-set: ^2.2.1
     multiaddr: ^10.0.0
     multiformats: ^9.4.13
-    native-abort-controller: ^1.0.3
     parse-duration: ^1.0.0
     prom-client: ^14.0.1
     stream-to-it: ^0.2.2
-    timeout-abort-controller: ^2.0.0
+    timeout-abort-controller: ^3.0.0
     uint8arrays: ^3.0.0
     uri-to-multiaddr: ^6.0.0
   dependenciesMeta:
     prom-client:
       optional: true
-  checksum: 62bd7f95f70e389ff86bd27f87b2d1cea6127efa09aa415cddceb679d1de91d38255cbbbb3ec17e2b80b686e0e4ad3feb70fff538f1ab896ef3d66a73610d734
+  checksum: c0310756fbf57421b6cc7c759085f5d1504b26e4461dbcfd4165de2def2b989f3b57721148f6343e5e37a2e32c7d7bfc236d24e4e78d0b152c98823e3f8bf004
   languageName: node
   linkType: hard
 
-"ipfs-repo-migrations@npm:^11.0.2":
-  version: 11.0.2
-  resolution: "ipfs-repo-migrations@npm:11.0.2"
+"ipfs-repo-migrations@npm:^12.0.1":
+  version: 12.0.1
+  resolution: "ipfs-repo-migrations@npm:12.0.1"
   dependencies:
     "@ipld/dag-pb": ^2.0.0
     cborg: ^1.3.1
-    datastore-core: ^6.0.7
+    datastore-core: ^7.0.0
     debug: ^4.1.0
     fnv1a: ^1.0.1
     interface-blockstore: ^2.0.2
     interface-datastore: ^6.0.2
     it-length: ^1.0.1
+    multiaddr: ^10.0.1
     multiformats: ^9.0.0
     protobufjs: ^6.10.2
     uint8arrays: ^3.0.0
     varint: ^6.0.0
-  checksum: 5be4a9e83df43c42f68e532f733caad05cc218a660e06625922b6bb95c70397064776266508b5cadefef88a0cb83f8e7b4f200f9f98c64825f33c473e28a5927
+  checksum: 32ee89270f822c173a1e69fa9c5c2ac1f9876a131ef0cf61c4264d950c3e90a70e2402a24d8563fa7830728364a523f026114ffa917feaa14576d08ee9693a92
   languageName: node
   linkType: hard
 
-"ipfs-repo@npm:^13.0.6":
-  version: 13.0.7
-  resolution: "ipfs-repo@npm:13.0.7"
+"ipfs-repo@npm:^14.0.1":
+  version: 14.0.1
+  resolution: "ipfs-repo@npm:14.0.1"
   dependencies:
     "@ipld/dag-pb": ^2.1.0
     bytes: ^3.1.0
     cborg: ^1.3.4
-    datastore-core: ^6.0.7
+    datastore-core: ^7.0.0
     debug: ^4.1.0
     err-code: ^3.0.1
     interface-blockstore: ^2.0.2
     interface-datastore: ^6.0.2
-    ipfs-repo-migrations: ^11.0.2
+    ipfs-repo-migrations: ^12.0.1
     it-drain: ^1.0.1
     it-filter: ^1.0.2
     it-first: ^1.0.2
@@ -5657,7 +5639,7 @@ __metadata:
     proper-lockfile: ^4.0.0
     sort-keys: ^4.2.0
     uint8arrays: ^3.0.0
-  checksum: 43d9ccc792d1cd9f69f8d7bd3cc3bc28e717aa4d821f79980078323d32372bdd1927358c83694d24c394b5293095f837d7228d5e7a527757645e46657aebafb0
+  checksum: 79c9be6ba33a9d14def14f1bc46ee93634cb942d0d4c9daa6a381a2d5218d6e2ae654d7c312c81017ae62f4974197c807d933070fd9d5588c522837e156a3c44
   languageName: node
   linkType: hard
 
@@ -5734,18 +5716,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ipfs@npm:^0.61.0":
-  version: 0.61.0
-  resolution: "ipfs@npm:0.61.0"
+"ipfs@npm:^0.62.0":
+  version: 0.62.0
+  resolution: "ipfs@npm:0.62.0"
   dependencies:
     debug: ^4.1.1
-    ipfs-cli: ^0.11.0
-    ipfs-core: ^0.13.0
+    ipfs-cli: ^0.12.0
+    ipfs-core: ^0.14.0
     semver: ^7.3.2
     update-notifier: ^5.0.0
   bin:
     jsipfs: src/cli.js
-  checksum: a142e1836428fd90dd20739213e536648480aad13285059fa2341cd116a72df7a27db1ad451ae9ed3ba8f7b2636028103b9f6c00feafb044dccc5536f19afb4e
+  checksum: dda3ef456050a3aa249f9f460336346f9d8463a0c731775a3884f26f0cbbaba70733720a9ba65369ab1d8ff8c8551e1d636d37a103a87b1bb0d5b38c9a328ea0
   languageName: node
   linkType: hard
 
@@ -6208,6 +6190,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"it-foreach@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "it-foreach@npm:0.1.1"
+  checksum: f9bfdf20b49fae001f265780191c9bae1bb6a76256c34fafe0f8ddc30135c24303562086fb57c3fc472488bcd1f4848e4d1cef0561adab6fb9165df2fe572a60
+  languageName: node
+  linkType: hard
+
 "it-glob@npm:^1.0.0, it-glob@npm:^1.0.1":
   version: 1.0.2
   resolution: "it-glob@npm:1.0.2"
@@ -6356,7 +6345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"it-sort@npm:^1.0.0":
+"it-sort@npm:^1.0.0, it-sort@npm:^1.0.1":
   version: 1.0.1
   resolution: "it-sort@npm:1.0.1"
   dependencies:
@@ -6916,7 +6905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libp2p-crypto@npm:^0.21.0":
+"libp2p-crypto@npm:^0.21.0, libp2p-crypto@npm:^0.21.1, libp2p-crypto@npm:^0.21.2":
   version: 0.21.2
   resolution: "libp2p-crypto@npm:0.21.2"
   dependencies:
@@ -6959,39 +6948,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libp2p-floodsub@npm:^0.28.0":
-  version: 0.28.0
-  resolution: "libp2p-floodsub@npm:0.28.0"
+"libp2p-floodsub@npm:^0.29.0":
+  version: 0.29.0
+  resolution: "libp2p-floodsub@npm:0.29.0"
   dependencies:
     debug: ^4.2.0
-    libp2p-interfaces: ^2.0.1
+    libp2p-interfaces: ^4.0.2
     time-cache: ^0.3.0
     uint8arrays: ^3.0.0
-  checksum: c61642b9cebde7a4a3548907ad6c9b81d5631545180bc9586e485f599e8b5cdb5adc59e6ae866ce83a559e018e006f9546ebf6f8f4215eed27612ef2502ac81d
+  checksum: 49140de38e48490ce47a0666d75efe2b824dc318b9dbccea2dcc67187ae05cd3731c4b34e2853bc0e993bbb853002b5297539961b06eef2667ff32f3e30c1ce3
   languageName: node
   linkType: hard
 
-"libp2p-gossipsub@npm:^0.12.0":
-  version: 0.12.3
-  resolution: "libp2p-gossipsub@npm:0.12.3"
+"libp2p-gossipsub@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "libp2p-gossipsub@npm:0.13.0"
   dependencies:
-    "@types/debug": ^4.1.5
+    "@types/debug": ^4.1.7
     debug: ^4.3.1
     denque: ^1.5.0
     err-code: ^3.0.1
     it-pipe: ^1.1.0
-    libp2p-interfaces: ^2.0.1
+    libp2p-interfaces: ^4.0.4
     peer-id: ^0.16.0
     protobufjs: ^6.11.2
-    time-cache: ^0.3.0
     uint8arrays: ^3.0.0
-  checksum: e73f7a75d25c60bc887e297d7ce6668c45f0101c32209bceb60812981cc0a3fae44315284afb32d887d350a3cd179d949caa02e4d0c8aec651b2ae32ebf596ff
+  checksum: 52261898b8165401a6a13293e56c05c381f9cf5613616e762316f2521f2d9ec713c5c631a88fe5930cd49df9d13f9112ce2b891d1df1134bbabdf6ff6bbc01cb
   languageName: node
   linkType: hard
 
-"libp2p-interfaces@npm:^2.0.1":
-  version: 2.0.9
-  resolution: "libp2p-interfaces@npm:2.0.9"
+"libp2p-interfaces@npm:^4.0.0, libp2p-interfaces@npm:^4.0.2, libp2p-interfaces@npm:^4.0.4":
+  version: 4.0.6
+  resolution: "libp2p-interfaces@npm:4.0.6"
   dependencies:
     abortable-iterator: ^3.0.0
     debug: ^4.3.1
@@ -7006,16 +6994,16 @@ __metadata:
     peer-id: ^0.16.0
     protobufjs: ^6.10.2
     uint8arrays: ^3.0.0
-  checksum: 68f20f433f62ec3e52120dc1148b1a3fe4582e968b9d2d9008c64eeeb73604551d31d7eb2f728c3e2fba9b3e0736ab1b62a9f66a0220d64c3315dff68113b7d3
+  checksum: 55f6c87d6278fc148863666e9f3baa0b3e232840da22440fca28b7d064c03bb9b66d7df1b3f317a25bb3ddf1776c0e6c7311c1b1ade428f2209d5d912da6f666
   languageName: node
   linkType: hard
 
-"libp2p-kad-dht@npm:^0.27.4":
-  version: 0.27.6
-  resolution: "libp2p-kad-dht@npm:0.27.6"
+"libp2p-kad-dht@npm:^0.28.5":
+  version: 0.28.6
+  resolution: "libp2p-kad-dht@npm:0.28.6"
   dependencies:
-    any-signal: ^2.1.2
-    datastore-core: ^6.0.7
+    any-signal: ^3.0.0
+    datastore-core: ^7.0.0
     debug: ^4.3.1
     err-code: ^3.0.0
     hashlru: ^2.3.0
@@ -7032,11 +7020,10 @@ __metadata:
     it-take: ^1.0.2
     k-bucket: ^5.1.0
     libp2p-crypto: ^0.21.0
-    libp2p-interfaces: ^2.0.1
+    libp2p-interfaces: ^4.0.0
     libp2p-record: ^0.10.4
     multiaddr: ^10.0.0
     multiformats: ^9.4.5
-    native-abort-controller: ^1.0.4
     p-defer: ^3.0.0
     p-map: ^4.0.0
     p-queue: ^6.6.2
@@ -7044,10 +7031,10 @@ __metadata:
     private-ip: ^2.3.3
     protobufjs: ^6.10.2
     streaming-iterables: ^6.0.0
-    timeout-abort-controller: ^2.0.0
+    timeout-abort-controller: ^3.0.0
     uint8arrays: ^3.0.0
     varint: ^6.0.0
-  checksum: 4d242f1fd3c1b50fb5742d2565906d4f39ad1db3694098aed74fcaee114a0e74e847258460dfdd1a85051b312ceb8f337f3c81ed50eededc1897eca7d5e6cdf5
+  checksum: 8328593afa6c67d42bfef07eb6d8cefd963af71ed1664359f26577f87138ec1406be01dd14c3348fb3963af5b426047771d66de5217f5ba01eecfeb77263c894
   languageName: node
   linkType: hard
 
@@ -7177,17 +7164,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"libp2p@npm:^0.35.4":
-  version: 0.35.8
-  resolution: "libp2p@npm:0.35.8"
+"libp2p@npm:^0.36.2":
+  version: 0.36.2
+  resolution: "libp2p@npm:0.36.2"
   dependencies:
     "@vascosantos/moving-average": ^1.1.0
-    abort-controller: ^3.0.0
     abortable-iterator: ^3.0.0
     aggregate-error: ^3.1.0
-    any-signal: ^2.1.1
+    any-signal: ^3.0.0
     bignumber.js: ^9.0.1
     class-is: ^1.1.0
+    datastore-core: ^7.0.0
     debug: ^4.3.1
     err-code: ^3.0.0
     es6-promisify: ^7.0.0
@@ -7199,23 +7186,26 @@ __metadata:
     it-drain: ^1.0.3
     it-filter: ^1.0.1
     it-first: ^1.0.4
+    it-foreach: ^0.1.1
     it-handshake: ^2.0.0
     it-length-prefixed: ^5.0.2
     it-map: ^1.0.4
     it-merge: ^1.0.0
     it-pipe: ^1.1.0
+    it-sort: ^1.0.1
     it-take: ^1.0.0
-    libp2p-crypto: ^0.21.0
-    libp2p-interfaces: ^2.0.1
+    libp2p-crypto: ^0.21.2
+    libp2p-interfaces: ^4.0.0
     libp2p-utils: ^0.4.0
     mafmt: ^10.0.0
     merge-options: ^3.0.4
+    mortice: ^2.0.1
     multiaddr: ^10.0.0
     multiformats: ^9.0.0
-    multistream-select: ^2.0.0
+    multistream-select: ^3.0.0
     mutable-proxy: ^1.0.0
     nat-api: ^0.3.1
-    node-forge: ^0.10.0
+    node-forge: ^1.2.1
     p-any: ^3.0.0
     p-fifo: ^1.0.0
     p-retry: ^4.4.0
@@ -7227,12 +7217,12 @@ __metadata:
     sanitize-filename: ^1.6.3
     set-delayed-interval: ^1.0.0
     streaming-iterables: ^6.0.0
-    timeout-abort-controller: ^2.0.0
+    timeout-abort-controller: ^3.0.0
     uint8arrays: ^3.0.0
     varint: ^6.0.0
     wherearewe: ^1.0.0
     xsalsa20: ^1.1.0
-  checksum: beb2dfab11fedc6eb06a6173c93db3e163ac24be0fb0b3a87e98be1e24c705d407a016e880aba6bf02890a77856d2807ffc044d494176f5ebc4cca9a468b8529
+  checksum: 66d9ed9f370cbfed65aab4c6085bba1fae220249f59f52bd3417b7b021b0efdd7cb8615cf57b5f760b11f44033854d1408bba025877bed771d40878bee45bf6b
   languageName: node
   linkType: hard
 
@@ -7706,9 +7696,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.1.8":
-  version: 6.1.8
-  resolution: "mongoose@npm:6.1.8"
+"mongoose@npm:^6.1.10":
+  version: 6.1.10
+  resolution: "mongoose@npm:6.1.10"
   dependencies:
     "@types/node": < 17.0.6
     bson: ^4.2.2
@@ -7719,7 +7709,7 @@ __metadata:
     ms: 2.1.2
     regexp-clone: 1.0.0
     sift: 13.5.2
-  checksum: e4f6400d569dda57664a678a046be965e6512cf97c9b2eb455ea95c545c981b0bae70dae05b6bac7a59067c34a5fcb68ff170bc3c8e389874a7730179dcdde29
+  checksum: 718f6f6f8d25e2a7d533643891c81364cdbbf382d01141b94ad0a0ab1b743878c0f72ecb68b7f5b3628240033ea652b4e049b91ef8114069b37650d5b37ba435
   languageName: node
   linkType: hard
 
@@ -7788,7 +7778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"multiaddr@npm:^10.0.0":
+"multiaddr@npm:^10.0.0, multiaddr@npm:^10.0.1":
   version: 10.0.1
   resolution: "multiaddr@npm:10.0.1"
   dependencies:
@@ -7821,10 +7811,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"multistream-select@npm:^2.0.0":
-  version: 2.0.1
-  resolution: "multistream-select@npm:2.0.1"
+"multistream-select@npm:^3.0.0":
+  version: 3.0.2
+  resolution: "multistream-select@npm:3.0.2"
   dependencies:
+    abortable-iterator: ^3.0.0
     bl: ^5.0.0
     debug: ^4.1.1
     err-code: ^3.0.1
@@ -7835,7 +7826,7 @@ __metadata:
     it-reader: ^3.0.0
     p-defer: ^3.0.0
     uint8arrays: ^3.0.0
-  checksum: 2246dc445774ad5a7b87af8b93e0668530933dfd370c266ce2c51d4fbdfdd45835e6983e6d3b50bf50e37a24730821e4b62268616d0be91d554df099354d34ae
+  checksum: f34eed4c30e2392ad21aae9257283f2cb23fda0ecdce18c5e3c4ef3e9a9f68d6dd79842717f18839d0fe2e9de1555b8ff5f0049a32a45a7819ff21be88927374
   languageName: node
   linkType: hard
 
@@ -7880,15 +7871,6 @@ __metadata:
     unordered-array-remove: ^1.0.2
     xml2js: ^0.1.0
   checksum: ca5e732e89af23519dd11856c0546f0decfb49774b57ff82a47fca8d9700ed33d8d15046f6a4d3ef8153c580b2fa29c10c5e24902e33efcf3ba2faf4eae62a67
-  languageName: node
-  linkType: hard
-
-"native-abort-controller@npm:^1.0.3, native-abort-controller@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "native-abort-controller@npm:1.0.4"
-  peerDependencies:
-    abort-controller: "*"
-  checksum: 7c98800304155300344f586721a12ac4207c9d660c7bc121549f6afb3db9175fe8200cfb3017ea3ea2664a9601b01fdd92f200783b2ce8792d64a4c50bd4030a
   languageName: node
   linkType: hard
 
@@ -7998,13 +7980,6 @@ __metadata:
     encoding:
       optional: true
   checksum: 8d816ffd1ee22cab8301c7756ef04f3437f18dace86a1dae22cf81db8ef29c0bf6655f3215cb0cdb22b420b6fe141e64b26905e7f33f9377a7fa59135ea3e10b
-  languageName: node
-  linkType: hard
-
-"node-forge@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "node-forge@npm:0.10.0"
-  checksum: 5aa6dc9922e424a20ef101d2f517418e2bc9cfc0255dd22e0701c0fad1568445f510ee67f6f3fcdf085812c4ca1b847b8ba45683b34776828e41f5c1794e42e1
   languageName: node
   linkType: hard
 
@@ -10190,14 +10165,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"timeout-abort-controller@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "timeout-abort-controller@npm:2.0.0"
+"timeout-abort-controller@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "timeout-abort-controller@npm:3.0.0"
   dependencies:
-    abort-controller: ^3.0.0
-    native-abort-controller: ^1.0.4
     retimer: ^3.0.0
-  checksum: 7f57cb6d5f4dcdcefe9c89deacc70c07ecafdba32d51333eca6aaf91e70bbff7e6ad13d9c098480d27a6f360383685f84819a3f475a5cfe8d3f3c7da465d1da7
+  checksum: c74387e6472a1e151d89b4af8c2a18ac72d566f3cd6ec9b203e3cda969fb5c54acba0a8d20cda8e9772efda52e27bea59c3423bab785b65f0287c9419184607e
   languageName: node
   linkType: hard
 
