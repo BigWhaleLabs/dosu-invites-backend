@@ -32,7 +32,7 @@ export default async function saveFramesToIpfs() {
       await extractFrame({
         input: cutVideoPath,
         fps: 1,
-        output: `${cutVideoFramesPath}/${+id + 1}-${addresses[id]}.png`,
+        output: `${cutVideoFramesPath}/${+id}-${addresses[id]}.png`,
         quality: 1,
         offset: +id * 1000,
       })
