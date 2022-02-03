@@ -55,5 +55,7 @@ export async function checkInWhiteList(ethAddress: string) {
 }
 
 export async function getIpfsLink(tokenId: number) {
+  if (!(await contract.ownerOf(tokenId))) return
+
   return await contract.tokenURI(tokenId)
 }
