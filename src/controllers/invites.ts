@@ -1,6 +1,6 @@
 import { Body, Controller, Get, IsNumber, IsString, Post } from 'amala'
 import {
-  checkInWhiteList,
+  checkInAllowList,
   getIpfsLink,
   getTokenToAddressMap,
 } from '@/helpers/contract'
@@ -25,7 +25,7 @@ export default class InvitesController {
 
   @Post('/invite')
   invite(@Body({ required: true }) { ethAddress }: InviteBody) {
-    return checkInWhiteList(ethAddress)
+    return checkInAllowList(ethAddress)
   }
 
   @Post('/ipfs')

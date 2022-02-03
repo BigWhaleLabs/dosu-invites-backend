@@ -1,20 +1,14 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import { cutVideoFramesPath, cutVideoPath } from '@/helpers/localPath'
-import { existsSync, mkdirSync, readFileSync, readdirSync } from 'fs'
+import { existsSync, mkdirSync } from 'fs'
 import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
 import extractFrame = require('ffmpeg-extract-frame')
+import { globSource } from 'ipfs-http-client'
 import timeout from '@/helpers/tiemout'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
-
-type IpfsFile = {
-  path: string
-  content: Buffer
-  type: string
-  pin?: boolean
-}
 
 export default async function saveFramesToIpfs() {
   try {
@@ -32,7 +26,9 @@ export default async function saveFramesToIpfs() {
       await extractFrame({
         input: cutVideoPath,
         fps: 1,
-        output: `${cutVideoFramesPath}/${+id}-${addresses[id]}.png`,
+        output: `${cutVideoFramesPath}/${id}-${addresses[
+          id
+        ].toLowerCase()}.png`,
         quality: 1,
         offset: +id * 1000,
       })
@@ -40,24 +36,15 @@ export default async function saveFramesToIpfs() {
 
     const ipfsClient = getIpfsClient()
 
-    const files: IpfsFile[] = []
+    await timeout(5000) // Wait so globSource will catch new files
 
-    await timeout(5000) // Wait so readdir will catch new files
-
-    readdirSync(cutVideoFramesPath).forEach((file) => {
-      const name = file.toLowerCase() // Because addresses stored in lower case in the contract
-
-      files.push({
-        path: `video/cutVideoFrames/${name}`,
-        content: readFileSync(`${cutVideoFramesPath}/${name}`),
-        type: 'file',
-      })
-    })
-
-    for await (const file of ipfsClient.addAll(files, {
-      wrapWithDirectory: true,
-    })) {
-      if (file.path === 'video/cutVideoFrames') {
+    for await (const file of ipfsClient.addAll(
+      globSource(cutVideoFramesPath, '**/*'),
+      {
+        wrapWithDirectory: true,
+      }
+    )) {
+      if (file.path === '') {
         const { name } = await ipfsClient.name.publish(`/ipfs/${file.cid}`)
         console.log(`Link to IPFS: /ipfs/${file.cid}`)
         console.log(`Link to IPNS: /ipns/${name}`)
