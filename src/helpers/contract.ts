@@ -51,16 +51,15 @@ export async function getTokenToAddressMap(updateCache?: boolean) {
 }
 
 export async function checkInAllowList(ethAddress: string) {
-  return await contract.whitelist(ethAddress)
+  return await contract.allowlist(ethAddress)
 }
 
 export async function getIpfsLink(tokenId: number) {
   if (!(await contract.baseURI())) {
-    console.log('Base URI is not set')
+    console.log('Please set baseURI in the contract')
     return
   }
-
-  if (!(await contract.ownerOf(tokenId))) return undefined
+  if (!(await contract.ownerOf(tokenId))) return
 
   return await contract.tokenURI(tokenId)
 }

@@ -33,6 +33,9 @@ export default class InvitesController {
     try {
       const ipfs = getIpfsClient()
       const ipnsLink = await getIpfsLink(tokenId)
+
+      if (!ipnsLink) return
+
       const ipfsUri = await ipfs.resolve(ipnsLink)
       return `https://gateway.ipfs.io${ipfsUri}`
     } catch (error) {
