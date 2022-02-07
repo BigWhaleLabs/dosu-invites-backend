@@ -42,6 +42,7 @@ export default async function saveFramesToIpfs() {
       globSource(cutVideoFramesPath, '**/*'),
       {
         wrapWithDirectory: true,
+        cidVersion: 1,
       }
     )) {
       if (file.path === '') {
