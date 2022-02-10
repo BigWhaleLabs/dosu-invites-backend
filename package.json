@@ -9,13 +9,14 @@
   "private": true,
   "scripts": {
     "distribute": "node dist/server.js",
-    "develop": "yarn generate-abi-types && tsc-watch --skipLibCheck --onSuccess 'node dist/server.js'",
+    "develop": "tsc-watch --skipLibCheck --onSuccess 'node dist/server.js'",
     "start-ipfs": "ipfs daemon",
-    "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
     "build-ts": "tsc --skipLibCheck",
-    "pretty": "prettier --check src",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx src",
-    "postinstall": "yarn generate-abi-types",
+    "pretty": "prettier --check src",
+    "postinstall": "yarn prepare",
+    "prepare": "yarn generate-abi-types",
+    "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
     "fix-style": "prettier --write src/ && eslint --fix src/"
   },
   "engines": {
