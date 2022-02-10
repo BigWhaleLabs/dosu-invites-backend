@@ -13,10 +13,10 @@
     "start-ipfs": "ipfs daemon",
     "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
     "build-ts": "tsc --skipLibCheck",
-    "test": "yarn jest --forceExit",
     "pretty": "prettier --check src",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx src",
-    "fix": "prettier --write src/ && eslint --fix src/"
+    "postinstall": "yarn generate-abi-types",
+    "fix-styles": "prettier --write src/ && eslint --fix src/"
   },
   "engines": {
     "node": ">=16.13.1"
