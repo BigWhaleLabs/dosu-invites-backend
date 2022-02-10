@@ -16,7 +16,7 @@
     "pretty": "prettier --check src",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx src",
     "postinstall": "yarn generate-abi-types",
-    "fix-styles": "prettier --write src/ && eslint --fix src/"
+    "fix-style": "prettier --write src/ && eslint --fix src/"
   },
   "engines": {
     "node": ">=16.13.1"
