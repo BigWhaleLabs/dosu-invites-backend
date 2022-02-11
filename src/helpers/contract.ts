@@ -56,7 +56,7 @@ export async function checkInAllowList(ethAddress: string) {
 
 export async function getIpfsLink(tokenId: number) {
   if (!(await contract.baseURI())) {
-    console.log('Please set baseURI in the contract')
+    console.error('Please set baseURI in the contract')
     return
   }
   if (!(await contract.ownerOf(tokenId))) return
