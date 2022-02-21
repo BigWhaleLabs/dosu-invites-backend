@@ -20,7 +20,7 @@
     "fix": "prettier --write src/ && eslint --fix src/"
   },
   "engines": {
-    "node": ">=16.13.1"
+    "node": "16.14.0"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
