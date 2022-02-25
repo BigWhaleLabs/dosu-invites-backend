@@ -1,15 +1,6 @@
-import { Body, Controller, Get, IsNumber, IsString, Post } from 'amala'
-import {
-  checkInAllowList,
-  getIpfsLink,
-  getTokenToAddressMap,
-} from '@/helpers/contract'
+import { Body, Controller, Get, IsNumber, Post } from 'amala'
+import { getIpfsLink, getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
-
-class InviteBody {
-  @IsString()
-  ethAddress: string
-}
 
 class IpfsBody {
   @IsNumber()
@@ -21,11 +12,6 @@ export default class InvitesController {
   @Get('/')
   invites() {
     return getTokenToAddressMap()
-  }
-
-  @Post('/invite')
-  invite(@Body({ required: true }) { ethAddress }: InviteBody) {
-    return checkInAllowList(ethAddress)
   }
 
   @Post('/ipfs')
