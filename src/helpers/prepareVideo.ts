@@ -1,34 +1,38 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
-import { cutVideoPath } from '@/helpers/localPath'
-import { cwd } from 'process'
-import { existsSync, unlinkSync } from 'fs'
-import { resolve } from 'path'
-import getVideoLength from '@/helpers/getVideoLength'
+import * as ffprobe from '@ffprobe-installer/ffprobe'
+import {
+  cutVideoFramesPath,
+  cutVideoPath,
+  cutVideoPath2,
+} from '@/helpers/localPath'
+import { existsSync, readdirSync, unlinkSync } from 'fs'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
+ffmpeg.setFfprobePath(ffprobe.path)
 
-const videoPath = resolve(cwd(), 'video', 'timelapse.mp4')
-
-export default async function prepareVideo(videoLength?: number) {
+export default function prepareVideo(videoLength?: number) {
   try {
-    if (!videoLength) {
-      videoLength = await getVideoLength()
-    }
-
     return new Promise<void>((resolve, reject) => {
-      // Check if we have input
-      if (!existsSync(videoPath)) {
-        return reject(new Error('Video not found'))
-      }
       // Clean output if needed
       if (existsSync(cutVideoPath)) {
         unlinkSync(cutVideoPath)
       }
-      // Do the cutting
-      ffmpeg(videoPath)
-        .setStartTime(0)
-        .withVideoFilter('setpts=24.0*PTS')
+
+      const inputList = readdirSync(cutVideoFramesPath)
+
+      if (videoLength === undefined) {
+        videoLength = inputList.length
+      }
+
+      // Merge frames into the video with 1image/24frames
+      const f = inputList.reduce(
+        (result, inputItem) =>
+          result.addInput(`${cutVideoFramesPath}/${inputItem}`).inputFPS(1),
+        ffmpeg()
+      )
+
+      f.fps(1)
         .setDuration(videoLength)
         .output(cutVideoPath)
         .on('error', (error) => reject(error))

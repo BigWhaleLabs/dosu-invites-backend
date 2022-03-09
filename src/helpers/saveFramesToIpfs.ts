@@ -1,38 +1,18 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
-import { cutVideoFramesPath, cutVideoPath } from '@/helpers/localPath'
-import { existsSync, mkdirSync } from 'fs'
-import { getTokenToAddressMap } from '@/helpers/contract'
-import getIpfsClient from '@/helpers/getIpfsClient'
-import extractFrame = require('ffmpeg-extract-frame')
+import { cutVideoFramesPath } from '@/helpers/localPath'
+import { existsSync } from 'fs'
 import { globSource } from 'ipfs-http-client'
+import getIpfsClient from '@/helpers/getIpfsClient'
 import timeout from '@/helpers/tiemout'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
 export default async function saveFramesToIpfs() {
   try {
-    if (!existsSync(cutVideoPath)) {
-      return new Error('Cut Video not found')
-    }
-
     if (!existsSync(cutVideoFramesPath)) {
-      mkdirSync(cutVideoFramesPath)
+      return new Error('Cut video frames not found')
     }
-
-    const addresses = await getTokenToAddressMap(false)
-
-    Object.keys(addresses).forEach(async (id: string) => {
-      await extractFrame({
-        input: cutVideoPath,
-        fps: 1,
-        output: `${cutVideoFramesPath}/${id}-${addresses[
-          id
-        ].toLowerCase()}.png`,
-        quality: 1,
-        offset: +id * 1000,
-      })
-    })
 
     const ipfsClient = getIpfsClient()
 
