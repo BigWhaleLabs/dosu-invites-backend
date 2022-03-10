@@ -30,8 +30,8 @@ export default function prepareVideo(videoLength: number) {
 
       // Merge frames into the video with 1image/24frames
       const videoOptions = {
-        fps: 24,
-        loop: 1, // seconds
+        fps: 60,
+        loop: 1,
         transition: false,
         videoBitrate: 1655,
         videoCodec: 'libx264',
