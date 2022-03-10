@@ -31,15 +31,14 @@
     "amala": "^7.0.0",
     "cache-manager": "^3.6.0",
     "ethers": "^5.5.4",
-    "ffmpeg-extract-frame": "^1.0.2",
-    "ffmpeg-extract-frames": "^2.0.2",
     "fluent-ffmpeg": "^2.1.2",
     "ipfs": "^0.62.0",
     "ipfs-http-client": "^56.0.0",
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.1.1",
-    "mongoose": "^6.1.10"
+    "mongoose": "^6.1.10",
+    "videoshow": "^0.1.12"
   },
   "devDependencies": {
     "@typechain/ethers-v5": "^9.0.0",

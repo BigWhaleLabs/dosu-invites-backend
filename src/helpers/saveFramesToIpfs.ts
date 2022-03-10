@@ -10,9 +10,8 @@ ffmpeg.setFfmpegPath(ffmpegPath.path)
 
 export default async function saveFramesToIpfs() {
   try {
-    if (!existsSync(cutVideoFramesPath)) {
+    if (!existsSync(cutVideoFramesPath))
       return new Error('Cut video frames not found')
-    }
 
     const ipfsClient = getIpfsClient()
 
