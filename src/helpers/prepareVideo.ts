@@ -18,13 +18,11 @@ export default async function prepareVideo(videoLength?: number) {
 
     return new Promise<void>((resolve, reject) => {
       // Check if we have input
-      if (!existsSync(videoPath)) {
-        return reject(new Error('Video not found'))
-      }
+      if (!existsSync(videoPath)) return reject(new Error('Video not found'))
+
       // Clean output if needed
-      if (existsSync(cutVideoPath)) {
-        unlinkSync(cutVideoPath)
-      }
+      if (existsSync(cutVideoPath)) unlinkSync(cutVideoPath)
+
       // Do the cutting
       ffmpeg(videoPath)
         .setStartTime(0)

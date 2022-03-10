@@ -1,7 +1,7 @@
 import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import { cutVideoFramesPath, cutVideoPath } from '@/helpers/localPath'
-import { existsSync, mkdirSync } from 'fs'
+import { existsSync, mkdirSync, readdir, unlinkSync } from 'fs'
 import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
 import extractFrame = require('ffmpeg-extract-frame')
@@ -19,6 +19,11 @@ export default async function saveFramesToIpfs() {
     if (!existsSync(cutVideoFramesPath)) {
       mkdirSync(cutVideoFramesPath)
     }
+
+    // Clean cutVideoFrames folder from files
+    readdir(cutVideoFramesPath, (_err, files) =>
+      files.forEach((file) => unlinkSync(`${cutVideoFramesPath}/${file}`))
+    )
 
     const addresses = await getTokenToAddressMap(false)
 

@@ -27,7 +27,7 @@ export function setupContractListeners() {
   contract.on<MintEvent>(filter, async (_to: string, tokenId: BigNumber) => {
     console.log('Updating the video...')
     await getTokenToAddressMap(true)
-    await prepareVideo(+tokenId + 1) // Because video length begins from +1, not from 0
+    await prepareVideo(+tokenId + 1)
     console.log('The video was updated! Saving frames...')
     await saveFramesToIpfs()
     console.log('Frames was saved!')
@@ -38,7 +38,7 @@ export async function getTokenToAddressMap(updateCache?: boolean) {
   const tokenToAddressMap = await cache.get<TokenToAddressMap | null>(
     'TokenToAddressMap'
   )
-  if (!tokenToAddressMap || updateCache) {
+  if (tokenToAddressMap || !updateCache) {
     const invites = await contract.getMintedInvites()
     const tokenToAddressMap: TokenToAddressMap = {}
     Object.keys(invites).forEach((tokenId) => {
