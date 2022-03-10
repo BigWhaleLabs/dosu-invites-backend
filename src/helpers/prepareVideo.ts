@@ -2,7 +2,13 @@ import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import * as ffprobe from '@ffprobe-installer/ffprobe'
 import * as videoshow from 'videoshow'
-import { copyFileSync, existsSync, readdirSync, unlinkSync } from 'fs'
+import {
+  copyFileSync,
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  unlinkSync,
+} from 'fs'
 import {
   cutVideoFramesPath,
   cutVideoPath,
@@ -16,6 +22,8 @@ export default function prepareVideo(videoLength: number) {
   try {
     return new Promise<void>((resolve, reject) => {
       // Clean output if needed
+      if (!existsSync(framesPath)) throw new Error('Frames folder not found')
+      if (!existsSync(cutVideoFramesPath)) mkdirSync(cutVideoFramesPath)
       if (existsSync(cutVideoPath)) unlinkSync(cutVideoPath)
 
       // Take only minted frames
