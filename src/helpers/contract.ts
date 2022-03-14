@@ -1,18 +1,22 @@
 import { BigNumber, EventFilter, ethers } from 'ethers'
-import env from '@/helpers/env'
-import getContractABI from '@/helpers/getContractABI'
-import prepareVideo from '@/helpers/prepareVideo'
+import { caching } from 'cache-manager'
 
-const contractAbi = getContractABI()
+import { Abi__factory } from '@/types/abiTypes/factories/Abi__factory'
+import { MintEvent } from '@/types/abiTypes/Abi'
+import env from '@/helpers/env'
+import prepareVideo from '@/helpers/prepareVideo'
+import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
+
+type TokenToAddressMap = { [tokenId: number]: string }
+
+const cache = caching({ store: 'memory', max: 100, ttl: 10 })
+
 const provider = new ethers.providers.InfuraProvider(env.ETH_NETWORK, {
   projectId: env.INFURA_PROJECT_ID,
   projectSecret: env.INFURA_PROJECT_SECRET,
 })
-export const contract = new ethers.Contract(
-  env.CONTRACT_ADDRESS,
-  contractAbi,
-  provider
-)
+
+export const contract = Abi__factory.connect(env.CONTRACT_ADDRESS, provider)
 
 export function setupContractListeners() {
   const filter: EventFilter = {
@@ -20,20 +24,38 @@ export function setupContractListeners() {
     topics: [ethers.utils.id('Mint(address,uint256)')],
   }
 
-  contract.on(filter, (_to: string, tokenId: BigNumber) => {
-    void prepareVideo(+tokenId)
+  contract.on<MintEvent>(filter, async (_to: string, tokenId: BigNumber) => {
+    console.log('Updating the video...')
+    await getTokenToAddressMap(true)
+    await prepareVideo(+tokenId + 1)
+    console.log('The video was updated! Saving frames...')
+    await saveFramesToIpfs()
+    console.log('Frames was saved!')
   })
 }
 
-export async function getTokenToAddressMap() {
-  const invites = await contract.getMintedInvites()
-  const tokenToAddressMap: { [tokenId: number]: string } = {}
-  for (const data of invites) {
-    tokenToAddressMap[+data.tokenId - 1] = data.ethAddress
+export async function getTokenToAddressMap(updateCache?: boolean) {
+  const tokenToAddressMap = await cache.get<TokenToAddressMap | null>(
+    'TokenToAddressMap'
+  )
+  if (tokenToAddressMap || !updateCache) {
+    const invites = await contract.getMintedInvites()
+    const tokenToAddressMap: TokenToAddressMap = {}
+    Object.keys(invites).forEach((tokenId) => {
+      tokenToAddressMap[+tokenId] = invites[tokenId].ethAddress
+    })
+    await cache.set('TokenToAddressMap', tokenToAddressMap)
+    return tokenToAddressMap
   }
   return tokenToAddressMap
 }
 
-export async function checkInWhiteList(ethAddress: string) {
-  return await contract.whitelist(ethAddress)
+export async function getIpfsLink(tokenId: number) {
+  if (!(await contract.baseURI())) {
+    console.error('Please set baseURI in the contract')
+    return
+  }
+  if (!(await contract.ownerOf(tokenId))) return
+
+  return await contract.tokenURI(tokenId)
 }
