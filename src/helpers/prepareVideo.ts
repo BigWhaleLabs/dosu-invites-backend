@@ -33,10 +33,11 @@ export default function prepareVideo(tokenToAddressMap: TokenToAddressMap) {
 
       // Take only minted frames
       const allFrames = readdirSync(framesPath)
-      Object.values(tokenToAddressMap).forEach((address, index) => {
+      const tokenToAddressMapValues = Object.values(tokenToAddressMap)
+      tokenToAddressMapValues.forEach((address, index) => {
         copyFileSync(
           `${framesPath}/${allFrames[index]}`,
-          `${cutVideoFramesPath}/${index}-${address}.png`
+          `${cutVideoFramesPath}/${index}-${address.toLowerCase()}.png`
         )
       })
 
@@ -49,6 +50,7 @@ export default function prepareVideo(tokenToAddressMap: TokenToAddressMap) {
         fps: 60,
         loop: 1,
         transition: false,
+        duration: tokenToAddressMapValues.length,
         videoBitrate: 1655,
         videoCodec: 'libx264',
         size: '400x400',
