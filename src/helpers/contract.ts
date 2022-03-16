@@ -1,4 +1,4 @@
-import { BigNumber, EventFilter, ethers } from 'ethers'
+import { EventFilter, ethers } from 'ethers'
 import { caching } from 'cache-manager'
 
 import { Abi__factory } from '@/types/abiTypes/factories/Abi__factory'
@@ -7,7 +7,7 @@ import env from '@/helpers/env'
 import prepareVideo from '@/helpers/prepareVideo'
 import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
 
-type TokenToAddressMap = { [tokenId: number]: string }
+export type TokenToAddressMap = { [tokenId: number]: string }
 
 const cache = caching({ store: 'memory', max: 100, ttl: 10 })
 
@@ -24,10 +24,10 @@ export function setupContractListeners() {
     topics: [ethers.utils.id('Mint(address,uint256)')],
   }
 
-  contract.on<MintEvent>(filter, async (_to: string, tokenId: BigNumber) => {
+  contract.on<MintEvent>(filter, async () => {
     console.log('Updating the video...')
-    await getTokenToAddressMap(true)
-    await prepareVideo(+tokenId + 1) // Because video length begins from +1, not from 0
+    const tokenToAddressMap = await getTokenToAddressMap(true)
+    await prepareVideo(tokenToAddressMap) // Because video length begins from +1, not from 0
     console.log('The video was updated! Saving frames...')
     await saveFramesToIpfs()
     console.log('Frames was saved!')

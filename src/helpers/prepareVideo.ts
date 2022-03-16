@@ -2,6 +2,7 @@ import * as ffmpeg from 'fluent-ffmpeg'
 import * as ffmpegPath from '@ffmpeg-installer/ffmpeg'
 import * as ffprobe from '@ffprobe-installer/ffprobe'
 import * as videoshow from 'videoshow'
+import { TokenToAddressMap } from '@/helpers/contract'
 import {
   copyFileSync,
   existsSync,
@@ -18,20 +19,27 @@ import {
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 ffmpeg.setFfprobePath(ffprobe.path)
 
-export default function prepareVideo(videoLength: number) {
+export default function prepareVideo(tokenToAddressMap: TokenToAddressMap) {
   try {
     return new Promise<void>((resolve, reject) => {
       // Clean output if needed
       if (!existsSync(framesPath)) throw new Error('Frames folder not found')
-      if (!existsSync(cutVideoFramesPath)) mkdirSync(cutVideoFramesPath)
+      existsSync(cutVideoFramesPath)
+        ? readdirSync(cutVideoFramesPath).forEach((file) =>
+            unlinkSync(`${cutVideoFramesPath}/${file}`)
+          )
+        : mkdirSync(cutVideoFramesPath)
       if (existsSync(cutVideoPath)) unlinkSync(cutVideoPath)
 
       // Take only minted frames
-      readdirSync(framesPath)
-        .slice(0, videoLength)
-        .forEach((file) =>
-          copyFileSync(`${framesPath}/${file}`, `${cutVideoFramesPath}/${file}`)
+      const allFrames = readdirSync(framesPath)
+      Object.values(tokenToAddressMap).forEach((address, index) => {
+        copyFileSync(
+          `${framesPath}/${allFrames[index]}`,
+          `${cutVideoFramesPath}/${index}-${address}.png`
         )
+      })
+
       const frames = readdirSync(cutVideoFramesPath).map(
         (frame) => `${cutVideoFramesPath}/${frame}`
       )

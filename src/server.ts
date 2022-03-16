@@ -12,7 +12,7 @@ void (async () => {
   await runMongo()
   console.log('Mongo connected')
   console.log('Merging frames to video...')
-  await prepareVideo(Object.keys(await getTokenToAddressMap()).length)
+  await prepareVideo(await getTokenToAddressMap())
   console.log('Video was created!')
   console.log('Saving frames into IPFS...')
   await saveFramesToIpfs()
