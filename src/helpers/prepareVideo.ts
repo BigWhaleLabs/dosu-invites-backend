@@ -14,6 +14,7 @@ import {
   cutVideoFramesPath,
   cutVideoPath,
   framesPath,
+  tmpVideoPath,
 } from '@/helpers/localPath'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
@@ -59,12 +60,21 @@ export default function prepareVideo(tokenToAddressMap: TokenToAddressMap) {
       }
 
       videoshow(frames, videoOptions)
-        .save(cutVideoPath)
+        .save(tmpVideoPath)
         .on('error', (error: string) => {
           console.error(error)
           reject()
         })
-        .on('end', () => resolve())
+        .on('end', () =>
+          ffmpeg(tmpVideoPath)
+            .duration(tokenToAddressMapValues.length - 0.1)
+            .output(cutVideoPath)
+            .on('error', (error) => {
+              console.error(error)
+            })
+            .on('end', () => resolve())
+            .run()
+        )
     })
   } catch (error) {
     console.error(error)

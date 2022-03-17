@@ -3,6 +3,8 @@ import 'source-map-support/register'
 
 import { getTokenToAddressMap } from '@/helpers/contract'
 import { setupContractListeners } from '@/helpers/contract'
+import { tmpVideoPath } from '@/helpers/localPath'
+import { unlinkSync } from 'fs'
 import prepareVideo from '@/helpers/prepareVideo'
 import runMongo from '@/models/index'
 import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
@@ -13,6 +15,7 @@ void (async () => {
   console.log('Mongo connected')
   console.log('Merging frames into the video...')
   await prepareVideo(await getTokenToAddressMap())
+  unlinkSync(tmpVideoPath)
   console.log('Video was created!')
   console.log('Saving frames into IPFS...')
   await saveFramesToIpfs()
