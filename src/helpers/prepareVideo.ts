@@ -22,8 +22,9 @@ ffmpeg.setFfprobePath(ffprobe.path)
 export default function prepareVideo(tokenToAddressMap: TokenToAddressMap) {
   try {
     return new Promise<void>((resolve, reject) => {
-      // Clean output if needed
       if (!existsSync(framesPath)) throw new Error('Frames folder not found')
+
+      // Clean output
       existsSync(cutVideoFramesPath)
         ? readdirSync(cutVideoFramesPath).forEach((file) =>
             unlinkSync(`${cutVideoFramesPath}/${file}`)
@@ -50,7 +51,6 @@ export default function prepareVideo(tokenToAddressMap: TokenToAddressMap) {
         fps: 60,
         loop: 1,
         transition: false,
-        duration: tokenToAddressMapValues.length,
         videoBitrate: 1655,
         videoCodec: 'libx264',
         size: '400x400',
