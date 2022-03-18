@@ -13,7 +13,7 @@ jobs:
       - name: Install modules
         run: yarn
       - name: Fix the types for linter
-        run: yarn fix
+        run: yarn fix-types-styles
       - name: Compile code
         run: yarn tsc --skipLibCheck
       - name: Lint code

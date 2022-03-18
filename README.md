@@ -8,7 +8,7 @@ This repository is used as the backend for dosu-invites.
 2. Create `.env` with the environment variables listed below
 3. Run `yarn` in the root folder
 4. Put the video frames into `video/frames`
-5. Setup the [infura ETH project][infuraproject] and use project id and secret keys in `.env`
+5. Setup the [infura ETH project](https://infura.io/dashboard) and use project id and secret keys in `.env`
 6. For Win64 and Linux run `yarn start-ipfs`, keep it alive. For MacOs run the official [IPFS app](https://docs.ipfs.io/install/ipfs-desktop/). Copy the address port that goes after `API` (advanced settings on main page at app)
 7. Run `yarn develop` in another terminal window
 
@@ -31,5 +31,3 @@ Also, please, consider looking at `.env.sample`.
 ## CD
 
 `main` branch get deployed to [backend.invites.dosu.io](https://backend.invites.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
-
-[infuraproject]: https://infura.io/dashboard
