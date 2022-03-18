@@ -17,7 +17,7 @@
     "postinstall": "yarn prepare",
     "prepare": "yarn generate-abi-types",
     "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
-    "fix": "prettier --write src/ && eslint --fix src/"
+    "fix-types-styles": "prettier --write src/ && eslint --fix src/"
   },
   "engines": {
     "node": "16.14.0"
