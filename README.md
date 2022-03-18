@@ -8,21 +8,23 @@ This repository is used as the backend for dosu-invites.
 2. Create `.env` with the environment variables listed below
 3. Run `yarn` in the root folder
 4. Create a `video/timelapse.mp4` file with the video you want to use for the invites
-5. Setup the (infura project)[infuraproject]
-6. Run `yarn develop`
+5. Setup the [infura ETH project](https://infura.io/dashboard) and use project id and secret keys in `.env`
+6. For Win64 and Linux run `yarn start-ipfs`, keep it alive. For MacOs run the official [IPFS app](https://docs.ipfs.io/install/ipfs-desktop/). Copy the address port that goes after `API` (advanced settings on main page at app)
+7. Run `yarn develop` in another terminal window
 
 And you should be good to go! Feel free to fork and submit pull requests.
 
 ## Environment variables
 
-| Name                    | Description                              |
-| ----------------------- | ---------------------------------------- |
-| `PORT`                  | Port to run server on (defaults to 1337) |
-| `MONGO`                 | URL of the mongo database                |
-| `ETH_NETWORK`           | Ethereum network                         |
-| `INFURA_PROJECT_ID`     | Infura project id                        |
-| `INFURA_PROJECT_SECRET` | Infura project secret                    |
-| `CONTRACT_ADDRESS`      | Dosu invites contract address            |
+| Name                    | Description                                                   |
+| ----------------------- | ------------------------------------------------------------- |
+| `PORT`                  | Port to run server on (defaults to 1336)                      |
+| `MONGO`                 | URL of the mongo database                                     |
+| `ETH_NETWORK`           | Ethereum network                                              |
+| `INFURA_PROJECT_ID`     | Infura project id                                             |
+| `INFURA_PROJECT_SECRET` | Infura project secret                                         |
+| `CONTRACT_ADDRESS`      | Dosu invites contract address                                 |
+| `IPFS_PATH`             | After running `yarn start-ipfs`, copy the address after `API` |
 
 Also, please, consider looking at `.env.sample`.
 
