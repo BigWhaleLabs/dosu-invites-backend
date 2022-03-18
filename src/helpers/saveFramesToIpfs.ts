@@ -6,7 +6,6 @@ import { getTokenToAddressMap } from '@/helpers/contract'
 import getIpfsClient from '@/helpers/getIpfsClient'
 import extractFrame = require('ffmpeg-extract-frame')
 import { globSource } from 'ipfs-http-client'
-import timeout from '@/helpers/tiemout'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
@@ -27,21 +26,21 @@ export default async function saveFramesToIpfs() {
 
     const addresses = await getTokenToAddressMap(false)
 
-    Object.keys(addresses).forEach(async (id: string) => {
-      await extractFrame({
-        input: cutVideoPath,
-        fps: 1,
-        output: `${cutVideoFramesPath}/${id}-${addresses[
-          id
-        ].toLowerCase()}.png`,
-        quality: 1,
-        offset: +id * 1000,
-      })
-    })
+    await Promise.all(
+      Object.keys(addresses).map((id: string) =>
+        extractFrame({
+          input: cutVideoPath,
+          fps: 1,
+          output: `${cutVideoFramesPath}/${id}-${addresses[
+            id
+          ].toLowerCase()}.png`,
+          quality: 1,
+          offset: +id * 1000,
+        })
+      )
+    )
 
     const ipfsClient = getIpfsClient()
-
-    await timeout(5000) // Wait so globSource will catch new files
 
     for await (const file of ipfsClient.addAll(
       globSource(cutVideoFramesPath, '**/*'),
