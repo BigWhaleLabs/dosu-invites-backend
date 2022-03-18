@@ -16,8 +16,7 @@
     "pretty": "prettier --check src",
     "postinstall": "yarn prepare",
     "prepare": "yarn generate-abi-types",
-    "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'",
-    "fix-types-styles": "prettier --write src/ && eslint --fix src/"
+    "generate-abi-types": "typechain --target=ethers-v5 'src/types/abi.json' --out-dir 'src/types/abiTypes'"
   },
   "engines": {
     "node": "16.14.0"
