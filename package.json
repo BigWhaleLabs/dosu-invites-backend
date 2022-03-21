@@ -10,7 +10,6 @@
   "scripts": {
     "distribute": "node dist/server.js",
     "develop": "yarn prepare && tsc-watch --skipLibCheck --onSuccess 'node dist/server.js'",
-    "start-ipfs": "jsipfs daemon",
     "build-ts": "tsc --skipLibCheck",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx src",
     "pretty": "prettier --check src",
