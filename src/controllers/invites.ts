@@ -22,7 +22,9 @@ export default class InvitesController {
 
       if (!ipnsLink) return
 
-      const ipfsUri = await ipfs.resolve(ipnsLink)
+      console.log(ipnsLink)
+
+      const ipfsUri = await ipfs.resolve(ipnsLink, { recursive: true })
       // Let's use private gateway in the future: https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#private-networks
       return `https://dweb.link${ipfsUri}`
     } catch (error) {
