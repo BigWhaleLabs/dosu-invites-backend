@@ -49,7 +49,9 @@ export default async function saveFramesToIpfs() {
       }
     )) {
       if (file.path === '') {
-        const { name } = await ipfsClient.name.publish(`/ipfs/${file.cid}`)
+        const { name } = await ipfsClient.name.publish(`/ipfs/${file.cid}`, {
+          key: 'dosu',
+        })
         console.log(`Link to IPFS: /ipfs/${file.cid}`)
         console.log(`Link to IPNS: /ipns/${name}`)
       }
