@@ -4,7 +4,6 @@ import { cutVideoFramesPath } from '@/helpers/localPath'
 import { existsSync } from 'fs'
 import { globSource } from 'ipfs-http-client'
 import getIpfsClient from '@/helpers/getIpfsClient'
-import timeout from '@/helpers/tiemout'
 
 ffmpeg.setFfmpegPath(ffmpegPath.path)
 
@@ -15,8 +14,6 @@ export default async function saveFramesToIpfs() {
 
     const ipfsClient = getIpfsClient()
 
-    await timeout(5000) // Wait so globSource will catch new files
-
     for await (const file of ipfsClient.addAll(
       globSource(cutVideoFramesPath, '**/*'),
       {
@@ -25,7 +22,9 @@ export default async function saveFramesToIpfs() {
       }
     )) {
       if (file.path === '') {
-        const { name } = await ipfsClient.name.publish(`/ipfs/${file.cid}`)
+        const { name } = await ipfsClient.name.publish(`/ipfs/${file.cid}`, {
+          key: 'dosu',
+        })
         console.log(`Link to IPFS: /ipfs/${file.cid}`)
         console.log(`Link to IPNS: /ipns/${name}`)
       }
