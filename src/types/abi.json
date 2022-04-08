@@ -122,18 +122,9 @@
   },
   {
     "inputs": [{ "internalType": "address", "name": "", "type": "address" }],
-    "name": "allowlist",
+    "name": "allowlistClaimed",
     "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      { "internalType": "address", "name": "_user", "type": "address" }
-    ],
-    "name": "allowlistAddress",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -212,7 +203,20 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "address", "name": "_to", "type": "address" }],
+    "inputs": [],
+    "name": "merkleRoot",
+    "outputs": [{ "internalType": "bytes32", "name": "", "type": "bytes32" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32[]",
+        "name": "_merkleProof",
+        "type": "bytes32[]"
+      }
+    ],
     "name": "mint",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -289,8 +293,17 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "string", "name": "_URI", "type": "string" }],
+    "inputs": [{ "internalType": "string", "name": "_uri", "type": "string" }],
     "name": "setBaseURI",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "_root", "type": "bytes32" }
+    ],
+    "name": "setMerkleRoot",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
