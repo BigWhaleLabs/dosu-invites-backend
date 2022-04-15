@@ -11,7 +11,7 @@ import startApp from '@/helpers/startApp'
 
 void (async () => {
   const tokenToAddressMap = await getTokenToAddressMap()
-  if (Object.keys(tokenToAddressMap).length !== 0) {
+  if (Object.keys(tokenToAddressMap).length) {
     console.log('Merging frames into the video...')
     await prepareVideo(await getTokenToAddressMap())
     unlinkSync(tmpVideoPath)
