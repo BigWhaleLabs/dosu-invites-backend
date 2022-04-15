@@ -10,18 +10,16 @@ import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
 import startApp from '@/helpers/startApp'
 
 void (async () => {
-  await runMongo()
-  console.log('Mongo connected')
-  // const tokenToAddressMap = await getTokenToAddressMap()
-  // if (Object.keys(tokenToAddressMap).length !== 0) {
-  console.log('Merging frames into the video...')
-  await prepareVideo(await getTokenToAddressMap())
-  unlinkSync(tmpVideoPath)
-  console.log('Video was created!')
-  console.log('Saving frames into IPFS...')
-  await saveFramesToIpfs()
-  console.log('Video frames saved into IPFS')
-  // }
+  const tokenToAddressMap = await getTokenToAddressMap()
+  if (Object.keys(tokenToAddressMap).length !== 0) {
+    console.log('Merging frames into the video...')
+    await prepareVideo(await getTokenToAddressMap())
+    unlinkSync(tmpVideoPath)
+    console.log('Video was created!')
+    console.log('Saving frames into IPFS...')
+    await saveFramesToIpfs()
+    console.log('Video frames saved into IPFS')
+  }
   console.log('Setting up contract listeners...')
   setupContractListeners()
   console.log('Contract listeners were set')
