@@ -6,7 +6,6 @@ import { setupContractListeners } from '@/helpers/contract'
 import { tmpVideoPath } from '@/helpers/localPath'
 import { unlinkSync } from 'fs'
 import prepareVideo from '@/helpers/prepareVideo'
-import runMongo from '@/models/index'
 import saveFramesToIpfs from '@/helpers/saveFramesToIpfs'
 import startApp from '@/helpers/startApp'
 
