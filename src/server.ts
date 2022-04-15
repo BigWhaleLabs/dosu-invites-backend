@@ -16,10 +16,10 @@ void (async () => {
     await prepareVideo(await getTokenToAddressMap())
     unlinkSync(tmpVideoPath)
     console.log('Video was created!')
-    console.log('Saving frames into IPFS...')
-    await saveFramesToIpfs()
-    console.log('Video frames saved into IPFS')
   }
+  console.log('Saving frames into IPFS...')
+  await saveFramesToIpfs()
+  console.log('Video frames saved into IPFS')
   console.log('Setting up contract listeners...')
   setupContractListeners()
   console.log('Contract listeners were set')
