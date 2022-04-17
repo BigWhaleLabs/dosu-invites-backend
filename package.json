@@ -19,15 +19,15 @@
   },
   "dependencies": {
     "@big-whale-labs/dosu-invites-contract": "^0.0.10",
-    "ethers": "^5.6.2",
+    "ethers": "^5.6.4",
     "ipfs-http-client": "^56.0.2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.18.0",
-    "@typescript-eslint/parser": "^5.18.0",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
     "dotenv": "^16.0.0",
-    "envalid": "^7.3.0",
-    "eslint": "^8.12.0",
+    "envalid": "^7.3.1",
+    "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-json": "^3.1.0",
