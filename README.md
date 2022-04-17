@@ -11,7 +11,8 @@ This repository is used as the backend for dosu-invites.
 5. [Install `ipfs` for your system](https://docs.ipfs.io/install/command-line/#official-distributions)
 6. Setup the [infura ETH project](https://infura.io/dashboard) and use project id and secret keys in `.env`
 7. Run `ipfs init --profile server` and `ipfs daemon &` (`&` is used to run it in parallel in one window), keep it alive. Also, you may use the official [IPFS app](https://docs.ipfs.io/install/ipfs-desktop/) (Copy the address port that goes after `API` -> advanced settings on main page at app and paste it in the `.env`)
-8. Run `yarn develop`
+8. Run `ipfs key gen dosu`. If you need to transfer the access, you need to pass the generated key file to other admin. Admin must import it using `ipfs key import dosu ./dosu`
+9. Run `yarn develop`
 
 And you should be good to go! Feel free to fork and submit pull requests.
 
