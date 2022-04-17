@@ -3,13 +3,9 @@ node_modules
 *.log
 dist
 
-# Abi types
-src/types/abiTypes/*
-
-# video
-video/*
-*.mp4
-!video/.gitkeep
+# token pictures
+tokens/*
+!tokens/.gitkeep
 
 # yarn
 .pnp.*
