@@ -6,8 +6,12 @@ import env from '@/helpers/env'
 import uploadTokensToIpfs from '@/helpers/uploadTokensToIpfs'
 
 async function refreshTokensOnIpfs() {
-  const numberOfTokensMinted = (await dosuInvites.totalSupply()).toNumber()
-  await uploadTokensToIpfs(numberOfTokensMinted)
+  try {
+    const numberOfTokensMinted = (await dosuInvites.totalSupply()).toNumber()
+    await uploadTokensToIpfs(numberOfTokensMinted)
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 void (async () => {
