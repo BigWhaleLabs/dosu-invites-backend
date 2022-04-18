@@ -17,8 +17,8 @@ export default async function uploadTokensToIpfs(newCount: number) {
   const rmTmp = () => rmSync(tmpFolder, { recursive: true })
 
   if (existsSync(tmpFolder)) rmTmp()
-
   mkdirSync(tmpFolder)
+
   const files = readdirSync('tokens').filter((name) => name !== '.gitkeep')
   for (let id = 0; id < newCount; id++) {
     copyFileSync(`tokens/${files[id]}`, `tmp/${id}.png`)
