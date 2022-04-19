@@ -1,0 +1,4 @@
+Dirs:
+  - ID: dosu
+    Dir: $(TOKENS_FOLDER)
+    Nocopy: false

@@ -12,4 +12,5 @@ export default cleanEnv(process.env, {
   CONTRACT_ADDRESS: str(),
   INFURA_PROJECT_ID: str(),
   IPFS_PATH: str(),
+  TOKENS_FOLDER: str(),
 })
