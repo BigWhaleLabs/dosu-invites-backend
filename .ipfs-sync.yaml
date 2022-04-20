@@ -1,4 +1,4 @@
 Dirs:
   - ID: dosu
-    Dir: $(TOKENS_FOLDER)
+    Dir: { TOKENS_FOLDER }
     Nocopy: false

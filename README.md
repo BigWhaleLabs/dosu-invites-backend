@@ -11,10 +11,11 @@ IPFS frames uploader for Dosu Invites NFT.
 5. [Install `ipfs` on your system](https://docs.ipfs.io/install/command-line/#official-distributions)
 6. Run `ipfs init --profile server`
 7. Run `ipfs key gen dosu`. The generated file can be imported to gain access to uploading to the same folder with `ipfs key import dosu ./dosu`
-8. Install [GoLang](https://go.dev/dl/) and [ipfs-sync](https://github.com/TheDiscordian/ipfs-sync)
-9. Set `TOKENS_FOLDER` in your `.env`
-10. Run `yarn ipfs-watch`
-11. Run `yarn develop`
+8. Run the daemon `ipfs daemon`
+9. Install [GoLang](https://go.dev/dl/) and [ipfs-sync](https://github.com/TheDiscordian/ipfs-sync)
+10. Set `TOKENS_FOLDER` in your `.env` and change the `{TOKENS_FOLDER}` in `.ipfs-sync.yaml` to the folder
+11. Run `yarn ipfs-watch`
+12. Run `yarn develop`
 
 ## Environment variables
 
