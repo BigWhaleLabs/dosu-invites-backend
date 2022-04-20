@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "distribute": "node dist/server.js",
-    "ipfs-watch": "env-cmd -x ipfs-sync -config ./.ipfs-sync.yaml",
+    "ipfs-watch": "ipfs-sync -config ./.ipfs-sync.yaml",
     "develop": "tsc-watch --skipLibCheck --onSuccess 'node dist/app.js'",
     "build-ts": "tsc --skipLibCheck",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx src",
@@ -27,7 +27,6 @@
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "dotenv": "^16.0.0",
-    "env-cmd": "^10.1.0",
     "envalid": "^7.3.1",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
