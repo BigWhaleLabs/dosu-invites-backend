@@ -13,8 +13,9 @@ IPFS frames uploader for Dosu Invites NFT.
 7. Run `ipfs key gen dosu`. The generated file can be imported to gain access to uploading to the same folder with `ipfs key import dosu ./dosu`
 8. Run the daemon `ipfs daemon`
 9. Install [GoLang](https://go.dev/dl/) and [ipfs-sync](https://github.com/TheDiscordian/ipfs-sync)
-10. Run `yarn ipfs-watch`, please make sure that `TOKENS_FOLDER` and `Dir` inside `.ipfs-sync.yaml` are the same
-11. Run `yarn develop`
+10. Run `ipfs-sync` inside the project directory.
+11. Make sure that `TOKENS_FOLDER` and `Dir` inside `~/.ipfs-sync.yaml` are the same. You can copy configuration from `.ipfs-sync-example.yaml`
+12. Run `yarn develop`
 
 ## Environment variables
 
