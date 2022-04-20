@@ -6,6 +6,7 @@ dist
 # token pictures
 tokens/*
 tmp/*
+!tokens/minted/.gitkeep
 !tokens/.gitkeep
 
 # yarn

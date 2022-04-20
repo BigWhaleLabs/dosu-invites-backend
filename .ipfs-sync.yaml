@@ -1,4 +1,4 @@
 Dirs:
   - ID: dosu
-    Dir: { TOKENS_FOLDER }
+    Dir: tokens/minted
     Nocopy: false
