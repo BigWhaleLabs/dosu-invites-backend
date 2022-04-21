@@ -12,7 +12,7 @@ export default function uploadTokensToIpfs(newCount: number) {
     return
   }
 
-  const tokensFolder = resolve(env.TOKENS_FOLDER)
+  const tokensFolder = resolve(env.PUBLIC_TOKENS_FOLDER)
   if (!existsSync(tokensFolder)) mkdirSync(tokensFolder)
 
   // Copy new files
