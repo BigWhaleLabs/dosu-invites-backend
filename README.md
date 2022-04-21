@@ -1,35 +1,38 @@
 # Dosu Invites backend code
 
-This repository is used as the backend for dosu-invites.
+IPFS frames uploader for Dosu Invites NFT.
 
 ## Installation and local launch
 
 1. Clone this repo: `git clone https://github.com/BigWhaleLabs/dosu-invites-backend`
 2. Create `.env` with the environment variables listed below
 3. Run `yarn` in the root folder
-4. Put the video frames into `video/frames`, each frame should be named like `0000000.png`, `0000001.png` etc.
-5. [Install `ipfs` for your system](https://docs.ipfs.io/install/command-line/#official-distributions)
-6. Setup the [infura ETH project](https://infura.io/dashboard) and use project id and secret keys in `.env`
-7. Run `ipfs init --profile server`
-8. Run `ipfs key gen dosu`. If you need to transfer the access, you need to pass the generated key file to other admin. Admin must import it using `ipfs key import dosu ./dosu`
-9. Run `ipfs daemon &` (`&` is used to run it in parallel in one window), keep it alive. Also, you may use the official [IPFS app](https://docs.ipfs.io/install/ipfs-desktop/) (Copy the address port that goes after `API` -> advanced settings on main page at app and paste it in the `.env`)
-10. Run `yarn develop`
-
-And you should be good to go! Feel free to fork and submit pull requests.
+4. Put the token pictures into `tokens`, each file should be named like `0000000.png`, `0000001.png` etc
+5. [Install `ipfs` on your system](https://docs.ipfs.io/install/command-line/#official-distributions)
+6. Run `ipfs init --profile server`
+7. Run the daemon `ipfs daemon`
+8. Install [GoLang](https://go.dev/dl/) and [ipfs-sync](https://github.com/TheDiscordian/ipfs-sync)
+9. Install `ipfs-sync`: `go install github.com/TheDiscordian/ipfs-sync`
+10. You might need to add installed go binaries to your `$HOME`
+11. Create `~/.ipfs-sync-example.yaml` similar to `.ipfs-sync-example.yaml`
+12. Make sure that `PUBLIC_TOKENS_FOLDER` and `Dir` inside `~/.ipfs-sync.yaml` are the same
+13. Run `ipfs-sync`
+14. Run `yarn develop`
 
 ## Environment variables
 
-| Name                    | Description                                                   |
-| ----------------------- | ------------------------------------------------------------- |
-| `PORT`                  | Port to run server on (defaults to 1336)                      |
-| `ETH_NETWORK`           | Ethereum network                                              |
-| `INFURA_PROJECT_ID`     | Infura project id                                             |
-| `INFURA_PROJECT_SECRET` | Infura project secret                                         |
-| `CONTRACT_ADDRESS`      | Dosu invites contract address                                 |
-| `IPFS_PATH`             | After running `yarn start-ipfs`, copy the address after `API` |
+| Name                   | Description                                                   |
+| ---------------------- | ------------------------------------------------------------- |
+| `ETH_NETWORK`          | Ethereum network                                              |
+| `INFURA_PROJECT_ID`    | Infura project id                                             |
+| `CONTRACT_ADDRESS`     | Dosu invites contract address                                 |
+| `IPFS_PATH`            | After running `yarn start-ipfs`, copy the address after `API` |
+| `PUBLIC_TOKENS_FOLDER` | The folder, which `ipfs-sync` watches                         |
+| `TOKENS_BASE_URI`      | The base URI for the token pictures                           |
+| `WEBSITE_URL`          | The website url                                               |
 
 Also, please, consider looking at `.env.sample`.
 
 ## CD
 
-`main` branch get deployed to [backend.invites.dosu.io](https://backend.invites.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
+`main` branch get deployed to the server automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).

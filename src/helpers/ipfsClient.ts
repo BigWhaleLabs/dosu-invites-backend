@@ -5,6 +5,4 @@ const ipfsClient = create({
   url: env.IPFS_PATH,
 })
 
-export default function getIpfsClient() {
-  return ipfsClient
-}
+export default ipfsClient

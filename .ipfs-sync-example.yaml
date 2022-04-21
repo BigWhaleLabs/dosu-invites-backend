@@ -1,0 +1,4 @@
+Dirs:
+  - ID: dosu
+    Dir: ~/public-ipfs
+    Nocopy: false
