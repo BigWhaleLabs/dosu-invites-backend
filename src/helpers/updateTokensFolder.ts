@@ -1,4 +1,5 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync } from 'fs'
+import { cwd } from 'process'
 import { resolve } from 'path'
 import env from '@/helpers/env'
 
@@ -15,7 +16,9 @@ export default function uploadTokensToIpfs(newCount: number) {
   if (!existsSync(tokensFolder)) mkdirSync(tokensFolder)
 
   // Copy new files
-  const fileNames = readdirSync('tokens').filter((name) => name !== '.gitkeep')
+  const fileNames = readdirSync(resolve(cwd(), 'tokens')).filter(
+    (name) => name !== '.gitkeep'
+  )
   for (let index = uploadedCount; index < newCount; index++)
     copyFileSync(`tokens/${fileNames[index]}`, `${tokensFolder}/${index}.png`)
 
