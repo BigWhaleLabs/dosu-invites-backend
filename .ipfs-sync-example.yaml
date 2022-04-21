@@ -1,4 +1,4 @@
 Dirs:
   - ID: dosu
-    Dir: tokens/minted
+    Dir: ~/public-ipfs
     Nocopy: false
