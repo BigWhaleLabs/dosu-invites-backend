@@ -13,4 +13,6 @@ export default cleanEnv(process.env, {
   INFURA_PROJECT_ID: str(),
   IPFS_PATH: str(),
   PUBLIC_TOKENS_FOLDER: str(),
+  TOKENS_BASE_URI: str(),
+  WEBSITE_URL: str(),
 })

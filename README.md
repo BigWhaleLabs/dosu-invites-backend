@@ -28,6 +28,8 @@ IPFS frames uploader for Dosu Invites NFT.
 | `CONTRACT_ADDRESS`     | Dosu invites contract address                                 |
 | `IPFS_PATH`            | After running `yarn start-ipfs`, copy the address after `API` |
 | `PUBLIC_TOKENS_FOLDER` | The folder, which `ipfs-sync` watches                         |
+| `TOKENS_BASE_URI`      | The base URI for the token pictures                           |
+| `WEBSITE_URL`          | The website url                                               |
 
 Also, please, consider looking at `.env.sample`.
 
