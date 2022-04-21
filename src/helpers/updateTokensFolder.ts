@@ -15,12 +15,9 @@ export default function uploadTokensToIpfs(newCount: number) {
   if (!existsSync(tokensFolder)) mkdirSync(tokensFolder)
 
   // Copy new files
-  const files = readdirSync('tokens').filter((name) => name !== '.gitkeep')
-  for (uploadedCount; uploadedCount < newCount; uploadedCount++)
-    copyFileSync(
-      `tokens/${files[uploadedCount]}`,
-      `${tokensFolder}/${uploadedCount}.png`
-    )
+  const fileNames = readdirSync('tokens').filter((name) => name !== '.gitkeep')
+  for (let index = uploadedCount; index < newCount; index++)
+    copyFileSync(`tokens/${fileNames[index]}`, `${tokensFolder}/${index}.png`)
 
   uploadedCount = newCount
   console.log(
