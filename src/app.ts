@@ -3,12 +3,12 @@ import 'source-map-support/register'
 
 import dosuInvites from '@/helpers/dosuInvites'
 import env from '@/helpers/env'
-import uploadTokensToIpfs from '@/helpers/uploadTokensToIpfs'
+import updateTokensFolder from '@/helpers/updateTokensFolder'
 
 async function refreshTokensOnIpfs() {
   try {
     const numberOfTokensMinted = (await dosuInvites.totalSupply()).toNumber()
-    await uploadTokensToIpfs(numberOfTokensMinted)
+    updateTokensFolder(numberOfTokensMinted)
   } catch (error) {
     console.error(error)
   }
