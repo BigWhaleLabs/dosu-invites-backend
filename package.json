@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@big-whale-labs/dosu-invites-contract": "^0.0.10",
+    "cache-manager": "^3.6.1",
     "ethers": "^5.6.4",
     "ipfs-http-client": "^56.0.2"
   },
