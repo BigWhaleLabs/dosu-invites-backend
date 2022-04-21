@@ -23,5 +23,7 @@ export default function uploadTokensToIpfs(newCount: number) {
     )
 
   uploadedCount = newCount
-  console.log(`Now you have ${uploadedCount} tokens`)
+  console.log(
+    `Uploaded new tokens. Number of tokens jumped to ${uploadedCount}!`
+  )
 }
