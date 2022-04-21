@@ -12,6 +12,7 @@ export default function uploadTokensToIpfs(newCount: number) {
   }
 
   const tokensFolder = resolve(env.TOKENS_FOLDER)
+  // TODO: add only new files to the folder without deleting it
   const rmTmp = () => rmSync(tokensFolder, { recursive: true })
 
   if (existsSync(tokensFolder)) rmTmp()
