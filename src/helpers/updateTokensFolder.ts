@@ -1,3 +1,4 @@
+import * as os from 'os'
 import {
   copyFileSync,
   existsSync,
@@ -18,8 +19,14 @@ export default function updateTokensFolder(newCount: number) {
     return
   }
 
-  const tokensFolder = resolve(env.PUBLIC_TOKENS_FOLDER)
-  if (!existsSync(tokensFolder)) mkdirSync(tokensFolder)
+  const tokensFolder = String(env.PUBLIC_TOKENS_FOLDER).replace(
+    /^~($|\/|\\)/,
+    `${os.homedir()}$1`
+  )
+  if (!existsSync(`${tokensFolder}/tokens`))
+    mkdirSync(`${tokensFolder}/tokens`, { recursive: true })
+  if (!existsSync(`${tokensFolder}/metadata`))
+    mkdirSync(`${tokensFolder}/metadata`, { recursive: true })
 
   // Copy new files
   const fileNames = readdirSync(resolve(cwd(), 'tokens')).filter(
@@ -27,7 +34,7 @@ export default function updateTokensFolder(newCount: number) {
   )
   for (let index = uploadedCount; index < newCount; index++) {
     copyFileSync(
-      `tokens/${fileNames[index]}`,
+      resolve(cwd(), `tokens/${fileNames[index]}`),
       `${tokensFolder}/tokens/${index + 1}.png`
     )
     const metadata = {
