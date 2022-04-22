@@ -1,4 +1,4 @@
-name: Dosu invites backend
+name: Compile and lint code
 
 on:
   pull_request:
