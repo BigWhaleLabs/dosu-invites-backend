@@ -1,4 +1,4 @@
-name: Dosu Invites backend
+name: Compile and lint code
 
 on:
   pull_request:
@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       - name: Install modules
         run: yarn
       - name: Compile code
