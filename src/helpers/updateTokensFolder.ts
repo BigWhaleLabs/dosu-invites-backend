@@ -28,22 +28,22 @@ export default function updateTokensFolder(newCount: number) {
   for (let index = uploadedCount; index < newCount; index++) {
     copyFileSync(
       `tokens/${fileNames[index]}`,
-      `${tokensFolder}/tokens/${index}.png`
+      `${tokensFolder}/tokens/${index + 1}.png`
     )
     const metadata = {
       description: "Dosu Invite that unlocks Dosu's features",
-      external_url: `${env.WEBSITE_URL}/${index}`,
-      image: `${env.TOKENS_BASE_URI}/${index}.png`,
-      name: `Dosu Invite #${index}`,
+      external_url: `${env.WEBSITE_URL}/${index + 1}`,
+      image: `${env.TOKENS_BASE_URI}/${index + 1}.png`,
+      name: `Dosu Invite #${index + 1}`,
       attributes: [
         {
           trait_type: 'Number',
-          value: `${index}`,
+          value: `${index + 1}`,
         },
       ],
     }
     writeFileSync(
-      `${tokensFolder}/metadata/${index}.json`,
+      `${tokensFolder}/metadata/${index + 1}.json`,
       JSON.stringify(metadata)
     )
   }
