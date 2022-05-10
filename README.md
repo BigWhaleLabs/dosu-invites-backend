@@ -35,4 +35,4 @@ Also, please, consider looking at `.env.sample`.
 
 ## CD
 
-`main` branch get deployed to the server automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
+`main` branch get deployed to [backend.dosu.io](https://backend.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).
