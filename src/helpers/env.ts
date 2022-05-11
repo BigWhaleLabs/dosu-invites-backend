@@ -9,8 +9,8 @@ dotenv.config({ path: resolve(cwd(), '.env') })
 export default cleanEnv(process.env, {
   PORT: num({ default: 1337 }),
   ETH_NETWORK: str(),
+  ETH_WS: str(),
   CONTRACT_ADDRESS: str(),
-  INFURA_PROJECT_ID: str(),
   IPFS_PATH: str(),
   PUBLIC_TOKENS_FOLDER: str(),
   TOKENS_BASE_URI: str(),

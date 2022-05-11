@@ -23,9 +23,10 @@ IPFS frames uploader for Dosu Invites NFT.
 
 | Name                   | Description                                                   |
 | ---------------------- | ------------------------------------------------------------- |
+| `PORT`                 | Port to run the server on (defaults to `1337`)                |
 | `ETH_NETWORK`          | Ethereum network                                              |
-| `INFURA_PROJECT_ID`    | Infura project id                                             |
-| `CONTRACT_ADDRESS`     | Dosu invites contract address                                 |
+| `ETH_WS`               | Ethereum node websocket URI                                   |
+| `CONTRACT_ADDRESS`     | Dosu Invites contract address                                 |
 | `IPFS_PATH`            | After running `yarn start-ipfs`, copy the address after `API` |
 | `PUBLIC_TOKENS_FOLDER` | The folder, which `ipfs-sync` watches                         |
 | `TOKENS_BASE_URI`      | The base URI for the token pictures                           |
