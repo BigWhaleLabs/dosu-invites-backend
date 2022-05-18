@@ -21,19 +21,15 @@ IPFS frames uploader for Dosu Invites NFT.
 
 ## Environment variables
 
-| Name                   | Description                                                   |
-| ---------------------- | ------------------------------------------------------------- |
-| `PORT`                 | Port to run the server on (defaults to `1337`)                |
-| `ETH_NETWORK`          | Ethereum network                                              |
-| `ETH_WS`               | Ethereum node websocket URI                                   |
-| `CONTRACT_ADDRESS`     | Dosu Invites contract address                                 |
-| `IPFS_PATH`            | After running `yarn start-ipfs`, copy the address after `API` |
-| `PUBLIC_TOKENS_FOLDER` | The folder, which `ipfs-sync` watches                         |
-| `TOKENS_BASE_URI`      | The base URI for the token pictures                           |
-| `WEBSITE_URL`          | The website url                                               |
+| Name                            | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| `PORT`                          | Port to run the server on (defaults to `1337`)                |
+| `ETH_NETWORK`                   | Ethereum network (defaults to @bwl/constants)                 |
+| `ETH_RPC`                       | Ethereum node RPC URI (defaults to @bwl/constants)            |
+| `DOSU_INVITES_CONTRACT_ADDRESS` | Dosu Invites contract address (defaults to @bwl/constants)    |
+| `IPFS_PATH`                     | After running `yarn start-ipfs`, copy the address after `API` |
+| `PUBLIC_TOKENS_FOLDER`          | The folder, which `ipfs-sync` watches                         |
+| `TOKENS_BASE_URI`               | The base URI for the token pictures                           |
+| `WEBSITE_URL`                   | The website url                                               |
 
 Also, please, consider looking at `.env.sample`.
-
-## CD
-
-`main` branch get deployed to [backend.dosu.io](https://backend.dosu.io) automatically with [ci-ninja](https://github.com/backmeupplz/ci-ninja).

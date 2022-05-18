@@ -19,6 +19,6 @@ void (async () => {
   await refreshTokensOnIpfs()
   dosuInvites.on(dosuInvites.filters.Mint(), refreshTokensOnIpfs)
   console.log(
-    `App was launched and is listening to changes on ${env.CONTRACT_ADDRESS}!`
+    `App was launched and is listening to changes on ${dosuInvites.address}!`
   )
 })()
