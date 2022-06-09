@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "distribute": "node dist/app.js",
-    "develop": "tsc-watch --skipLibCheck --onSuccess 'node dist/app.js'",
-    "build-ts": "tsc --skipLibCheck",
+    "distribute": "yarn build && node dist/app.js",
+    "start": "tsc-watch --skipLibCheck --onSuccess 'node dist/app.js'",
+    "build": "tsc --skipLibCheck",
     "lint": "yarn pretty && eslint --max-warnings 0 --ext ts,tsx src",
     "pretty": "prettier --check src"
   },

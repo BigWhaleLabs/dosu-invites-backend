@@ -17,7 +17,7 @@ IPFS frames uploader for Dosu Invites NFT.
 11. Create `~/.ipfs-sync-example.yaml` similar to `.ipfs-sync-example.yaml`
 12. Make sure that `PUBLIC_TOKENS_FOLDER` and `Dir` inside `~/.ipfs-sync.yaml` are the same
 13. Run `ipfs-sync`
-14. Run `yarn develop`
+14. Run `yarn start`
 
 ## Environment variables
 
