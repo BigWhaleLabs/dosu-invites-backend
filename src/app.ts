@@ -2,7 +2,6 @@ import 'module-alias/register'
 import 'source-map-support/register'
 
 import dosuInvites from '@/helpers/dosuInvites'
-import env from '@/helpers/env'
 import updateTokensFolder from '@/helpers/updateTokensFolder'
 
 async function refreshTokensOnIpfs() {
