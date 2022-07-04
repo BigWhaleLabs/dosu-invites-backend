@@ -17,30 +17,30 @@
     "node": "16.14.0"
   },
   "dependencies": {
-    "@big-whale-labs/constants": "^0.0.16",
+    "@big-whale-labs/constants": "^0.1.0",
     "@big-whale-labs/dosu-invites-contract": "^0.0.12",
-    "ethers": "^5.6.8",
-    "ipfs-http-client": "^57.0.1"
+    "ethers": "^5.6.9",
+    "ipfs-http-client": "^57.0.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
     "dotenv": "^16.0.1",
     "envalid": "^7.3.1",
-    "eslint": "^8.17.0",
+    "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-json-format": "^2.0.1",
-    "eslint-plugin-no-relative-import-paths": "^1.3.3",
+    "eslint-plugin-no-relative-import-paths": "^1.3.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "module-alias": "^2.2.2",
     "prettier": "^2.7.1",
     "source-map-support": "^0.5.21",
     "tsc-watch": "^5.0.3",
-    "typescript": "^4.7.3"
+    "typescript": "^4.7.4"
   },
   "_moduleAliases": {
     "@": "dist"
